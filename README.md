@@ -1,4 +1,4 @@
-# ReactJS_GMP_2021
+# Reactjs_gmp_2021
 ReactJS Global Mentoring Program 2021
 
 # Getting Started with Create React App
