@@ -7,7 +7,8 @@
 	"rules": {
 		"simple-import-sort/imports": "error",
 		"comma-dangle": ["error", "never"],
-		"object-curly-spacing": ["error", "never"]
+		"object-curly-spacing": ["error", "never"],
+		"newline-after-var": ["error", "always"]
 	},
 	"parser": "@babel/eslint-parser",
 	"extends": ["airbnb", "airbnb/hooks"]

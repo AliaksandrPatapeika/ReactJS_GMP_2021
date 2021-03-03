@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu renders correctly 1`] = `
+<div
+  className="menuContainer"
+>
+  <nav>
+    <ul
+      className="resultsFilterContainer"
+    >
+      <li
+        className="filterItem active"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+      >
+        ALL
+      </li>
+      <li
+        className="filterItem"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+      >
+        DOCUMENTARY
+      </li>
+      <li
+        className="filterItem"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+      >
+        COMEDY
+      </li>
+      <li
+        className="filterItem"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+      >
+        HORROR
+      </li>
+      <li
+        className="filterItem"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+      >
+        CRIME
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="resultsSortContainer"
+  >
+    <div
+      className="sortBy"
+    >
+      SORT BY
+    </div>
+    <div
+      className="releaseDate"
+    >
+      RELEASE DATE
+    </div>
+    <div
+      aria-label="Sort Button"
+      className="arrow arrow-down"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex="0"
+    />
+  </div>
+</div>
+`;

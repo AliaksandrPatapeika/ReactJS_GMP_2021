@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterItem renders correctly 1`] = `
+<li
+  className="filterItem active"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="menuitem"
+>
+  ALL
+</li>
+`;

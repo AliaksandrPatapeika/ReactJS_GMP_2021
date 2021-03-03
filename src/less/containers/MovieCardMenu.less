@@ -1,0 +1,36 @@
+@import "../variables";
+
+.movieCardMenuContainer {
+	display: flex;
+	flex-direction: column;
+	background-color: @black;
+	position: absolute;
+	border-radius: 4px;
+	right: 8px;
+	top: 8px;
+	width: 160px;
+
+	li:last-of-type {
+		margin-bottom: 10px;
+	}
+
+	.menuItem {
+		font-family: @NetflixSans-Regular;
+		font-size: 18px;
+		color: @white;
+		padding: 4px 16px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: @red;
+		}
+	}
+
+	.closeButton {
+		border-radius: 2px;
+		background-color: @black;
+		align-self: flex-end;
+		margin: 6px 6px 0 0;
+		padding: 3px 7px;
+	}
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThreeDotsIcon renders correctly 1`] = `
+<button
+  className="threeDotsIcon"
+  onClick={[Function]}
+  type="button"
+>
+  <img
+    alt="MovieButton"
+    src="test-file-stub"
+  />
+</button>
+`;
