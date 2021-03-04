@@ -51,3 +51,6 @@ export const MockMovies = [
 ];
 
 export const MockResultCount = 39;
+
+// eslint-disable-next-line no-console
+export const MockOnClick = (button) => console.log(`Clicked from "${button}"`);

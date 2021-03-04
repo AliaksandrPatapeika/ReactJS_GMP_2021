@@ -18,10 +18,7 @@
 		"url": "git+https://github.com/AliaksandrPatapeika/reactjs_gmp_2021.git"
 	},
 	"jest": {
-		"moduleDirectories": [
-			"node_modules",
-			"src"
-		],
+		"moduleDirectories": ["node_modules", "src"],
 		"moduleNameMapper": {
 			"\\.(ttf|woff|png|jpg|jpeg|svg|gif)$": "<rootDir>/src/tests/mocks/fileMock.js",
 			"\\.(css|less)$": "identity-obj-proxy"

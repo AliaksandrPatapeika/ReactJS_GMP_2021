@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList renders correctly 1`] = `
+<div
+  className="moviesListContainer"
+>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Pulp Fiction
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        2004
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Action & Adventure
+    </div>
+  </div>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Bohemian Rhapsody
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        2003
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Drama, Biography, Music
+    </div>
+  </div>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Kill Bill: Vol 2
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        1994
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Oscar winning Movie
+    </div>
+  </div>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Avengers: War of Infinity
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        2004
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Action & Adventure
+    </div>
+  </div>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Inception
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        2003
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Action & Adventure
+    </div>
+  </div>
+  <div
+    className="movieCardContainer"
+  >
+    <img
+      alt="Item"
+      className="itemImage"
+      src="test-file-stub"
+    />
+    <button
+      className="threeDotsIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      
+      <img
+        alt="MovieButton"
+        src="test-file-stub"
+      />
+    </button>
+    <div
+      className="descriptionContainer"
+    >
+      <div
+        className="itemTitle"
+      >
+        Reservoir dogs
+      </div>
+      <div
+        className="itemReleaseDate"
+      >
+        1994
+      </div>
+    </div>
+    <div
+      className="itemGenre"
+    >
+      Oscar winning Movie
+    </div>
+  </div>
+</div>
+`;

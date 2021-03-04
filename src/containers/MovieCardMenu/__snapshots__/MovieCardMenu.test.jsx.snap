@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCardMenu renders correctly 1`] = `
+<div
+  className="movieCardMenuContainer"
+>
+  <button
+    className="menuItem closeButton"
+    onClick={[Function]}
+    type="button"
+  >
+    ✕
+    
+  </button>
+  <nav>
+    <ul>
+      <li
+        className="menuItem"
+        role="menuitem"
+      >
+        Edit
+      </li>
+      <li
+        className="menuItem"
+        role="menuitem"
+      >
+        Delete
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

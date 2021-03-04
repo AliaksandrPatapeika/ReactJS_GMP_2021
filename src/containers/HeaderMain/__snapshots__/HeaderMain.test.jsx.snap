@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMain renders correctly 1`] = `
+<div
+  className="headerMainContainer"
+>
+  <h1
+    className="headerTitle"
+  >
+    FIND YOUR MOVIE
+  </h1>
+  <div
+    className="searchContainer"
+  >
+    <input
+      className="searchInput"
+      placeholder="What do you want to watch?"
+    />
+    <button
+      className="searchButton"
+      onClick={[Function]}
+      type="button"
+    >
+      SEARCH
+      
+    </button>
+  </div>
+</div>
+`;

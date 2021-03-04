@@ -1,0 +1,25 @@
+@import "../../less/variables";
+
+.headerTopContainer {
+	display: flex;
+	justify-content: space-between;
+	padding: 22px 60px 0 64px;
+
+	.addMovieButton {
+		cursor: pointer;
+		width: 184px;
+		height: 48px;
+		border-radius: 4px;
+		color: @red;
+		font-size: 22px;
+		font-family: @NetflixSans-Medium;
+		background-color: @gray;
+		opacity: 0.8;
+
+		&:hover {
+			color: @white;
+			background-color: @red-hover;
+			opacity: 1;
+		}
+	}
+}

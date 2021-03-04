@@ -1,0 +1,36 @@
+@import "../../less/variables";
+
+.resultsSortContainer {
+	display: flex;
+
+	.sortBy {
+		color: @gray;
+		font-size: 20px;
+		font-family: @NetflixSans-Regular;
+	}
+
+	.releaseDate {
+		margin-left: 30px;
+		color: @white;
+		font-size: 36px;
+		font-family: @BloomingElegant_Sans;
+		line-height: 0.23;
+	}
+
+	.arrow {
+		cursor: pointer;
+		width: 14px;
+		height: 14px;
+		margin-left: 16px;
+		background-color: transparent;
+		margin-top: 8px;
+
+		&:hover {
+			filter: contrast(190%);
+		}
+	}
+
+	.arrow-up {
+		transform: rotate(180deg);
+	}
+}

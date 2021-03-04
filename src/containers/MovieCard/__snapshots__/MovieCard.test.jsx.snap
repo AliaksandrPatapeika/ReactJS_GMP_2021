@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard renders correctly 1`] = `
+<div
+  className="movieCardContainer"
+>
+  <img
+    alt="Item"
+    className="itemImage"
+    src="test-file-stub"
+  />
+  <button
+    className="threeDotsIcon"
+    onClick={[Function]}
+    type="button"
+  >
+    
+    <img
+      alt="MovieButton"
+      src="test-file-stub"
+    />
+  </button>
+  <div
+    className="descriptionContainer"
+  >
+    <div
+      className="itemTitle"
+    >
+      Pulp Fiction
+    </div>
+    <div
+      className="itemReleaseDate"
+    >
+      2004
+    </div>
+  </div>
+  <div
+    className="itemGenre"
+  >
+    Action & Adventure
+  </div>
+</div>
+`;

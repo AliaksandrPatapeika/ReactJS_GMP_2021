@@ -1,0 +1,32 @@
+@import "../../less/variables";
+
+.movieCardContainer {
+	position: relative;
+	width: 330px;
+	margin-bottom: 40px;
+	color: @white;
+	font-family: @NetflixSans-Regular;
+
+	.threeDotsIcon {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		width: 30px;
+		height: 30px;
+		border: 6px solid @black;
+		border-radius: 50%;
+		opacity: 0;
+		background-color: @black;
+	}
+
+	.descriptionContainer {
+		display: flex;
+		justify-content: space-between;
+		padding: 8px 0;
+	}
+
+	&:hover .threeDotsIcon {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
