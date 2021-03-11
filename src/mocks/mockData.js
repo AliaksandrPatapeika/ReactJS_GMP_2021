@@ -10,42 +10,42 @@ export const MockMovies = [
     id: 1,
     url: image01,
     description: 'Pulp Fiction',
-    year: 2004,
+    releaseDate: '2004-03-15',
     genre: 'Action & Adventure'
   },
   {
     id: 2,
     url: image02,
     description: 'Bohemian Rhapsody',
-    year: 2003,
+    releaseDate: '2003-05-23',
     genre: 'Drama, Biography, Music'
   },
   {
     id: 3,
     url: image03,
     description: 'Kill Bill: Vol 2',
-    year: 1994,
+    releaseDate: '1994-01-08',
     genre: 'Oscar winning Movie'
   },
   {
     id: 4,
     url: image04,
     description: 'Avengers: War of Infinity',
-    year: 2004,
+    releaseDate: '2004-07-21',
     genre: 'Action & Adventure'
   },
   {
     id: 5,
     url: image05,
     description: 'Inception',
-    year: 2003,
+    releaseDate: '2003-05-02',
     genre: 'Action & Adventure'
   },
   {
     id: 6,
     url: image06,
     description: 'Reservoir dogs',
-    year: 1994,
+    releaseDate: '1994-11-30',
     genre: 'Oscar winning Movie'
   }
 ];
@@ -53,4 +53,4 @@ export const MockMovies = [
 export const MockResultCount = 39;
 
 // eslint-disable-next-line no-console
-export const MockOnClick = (button) => console.log(`Clicked from "${button}"`);
+export const MockOnClick = (button, attrs) => console.log(`Clicked from "${button}"`, attrs);

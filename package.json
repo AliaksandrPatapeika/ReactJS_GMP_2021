@@ -18,7 +18,10 @@
 		"url": "git+https://github.com/AliaksandrPatapeika/reactjs_gmp_2021.git"
 	},
 	"jest": {
-		"moduleDirectories": ["node_modules", "src"],
+		"moduleDirectories": [
+			"node_modules",
+			"src"
+		],
 		"moduleNameMapper": {
 			"\\.(ttf|woff|png|jpg|jpeg|svg|gif)$": "<rootDir>/src/tests/mocks/fileMock.js",
 			"\\.(css|less)$": "identity-obj-proxy"
@@ -34,11 +37,13 @@
 		"react-dom": "^17.0.1",
 		"react-redux": "^7.2.2",
 		"react-router": "^5.2.0",
+		"react-select": "^4.2.1",
 		"redux": "^4.0.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.16",
 		"@babel/eslint-parser": "^7.12.17",
+		"@babel/plugin-proposal-class-properties": "^7.13.0",
 		"@babel/preset-env": "^7.12.17",
 		"@babel/preset-react": "^7.12.13",
 		"babel-jest": "^26.6.3",
