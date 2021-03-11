@@ -3,10 +3,10 @@ import './ItemReleaseDate.less';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ItemReleaseDate = ({year}) => <div className="itemReleaseDate">{year}</div>;
+const ItemReleaseDate = ({releaseDate}) => <div className="itemReleaseDate">{releaseDate}</div>;
 
 ItemReleaseDate.propTypes = {
-  year: PropTypes.number.isRequired
+  releaseDate: PropTypes.string.isRequired
 };
 
 export default ItemReleaseDate;
