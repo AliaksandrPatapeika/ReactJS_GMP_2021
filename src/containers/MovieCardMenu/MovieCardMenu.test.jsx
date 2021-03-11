@@ -6,7 +6,11 @@ import MovieCardMenu from './MovieCardMenu';
 describe('MovieCardMenu', () => {
   test('renders correctly', () => {
     const movieCardMenu = renderer
-      .create(<MovieCardMenu toggleMenu={Function} />)
+      .create(<MovieCardMenu
+        closeSubMenu={Function}
+        showEditWindow={Function}
+        showDeleteWindow={Function}
+      />)
       .toJSON();
 
     expect(movieCardMenu).toMatchSnapshot();

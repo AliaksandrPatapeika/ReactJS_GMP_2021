@@ -66,8 +66,8 @@ Select.propTypes = {
   allowSelectAll: PropTypes.bool,
   allSelectedLabel: PropTypes.string,
   allOption: PropTypes.shape({
-    label: PropTypes.string,
-    value: PropTypes.string
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
   })
 };
 

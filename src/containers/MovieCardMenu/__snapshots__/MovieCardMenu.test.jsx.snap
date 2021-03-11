@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCardMenu renders correctly 1`] = `
+<div
+  className="movieCardMenuContainer"
+  onClick={[Function]}
+  onTouchEnd={[Function]}
+>
+  <button
+    className="closeButton"
+    disabled=""
+    onClick={[Function]}
+    type="button"
+  >
+    
+    <i
+      aria-hidden="true"
+      className="fa fa-times"
+    />
+  </button>
+  <nav>
+    <ul>
+      <li
+        className="menuItem"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="menuitem"
+        tabIndex="0"
+      >
+        Edit
+      </li>
+      <li
+        className="menuItem"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="menuitem"
+        tabIndex="0"
+      >
+        Delete
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

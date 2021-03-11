@@ -25,11 +25,11 @@ const MultiValue = (props) => {
 
 MultiValue.propTypes = {
   data: PropTypes.shape({
-    label: PropTypes.string,
-    value: PropTypes.string
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
   }).isRequired,
   selectProps: PropTypes.shape({
-    allSelectedLabel: PropTypes.string
+    allSelectedLabel: PropTypes.string.isRequired
   }).isRequired
 };
 
