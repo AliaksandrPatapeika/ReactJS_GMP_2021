@@ -4,13 +4,17 @@ import React from 'react';
 
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import {MockOnClick} from '../../mocks/mockData';
+import ModalWindowContext from '../../context';
 
 const HeaderTop = () => (
-  <div className="headerTopContainer">
-    <Logo />
-    <Button className="addMovieButton" onClick={() => MockOnClick('addMovieButton')} title="+ ADD MOVIE" />
-  </div>
+  <ModalWindowContext.Consumer>
+    {({showModalWindow}) => (
+      <div className="headerTopContainer">
+        <Logo />
+        <Button className="addMovieButton" onClick={() => showModalWindow('addMovie')} title="+ ADD MOVIE" />
+      </div>
+    )}
+  </ModalWindowContext.Consumer>
 );
 
 export default HeaderTop;

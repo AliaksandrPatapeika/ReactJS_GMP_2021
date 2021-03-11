@@ -9,7 +9,7 @@ describe('ItemReleaseDate', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
     const itemReleaseDate = renderer
-      .create(<ItemReleaseDate year={mockMovie.year} />)
+      .create(<ItemReleaseDate releaseDate={mockMovie.releaseDate.slice(0, 4)} />)
       .toJSON();
 
     expect(itemReleaseDate).toMatchSnapshot();

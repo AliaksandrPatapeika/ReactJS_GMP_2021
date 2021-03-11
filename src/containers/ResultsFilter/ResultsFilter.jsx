@@ -1,37 +1,43 @@
 import './ResultsFilter.less';
 
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 
 import FilterItem from '../../components/FilterItem';
+import {FilterItems} from '../../constants';
 
-const ResultsFilter = () => {
-  const filterItems = [
-    {id: 1, name: 'ALL'},
-    {id: 2, name: 'DOCUMENTARY'},
-    {id: 3, name: 'COMEDY'},
-    {id: 4, name: 'HORROR'},
-    {id: 5, name: 'CRIME'}
-  ];
-  const [activeFilterId, setActiveFilterId] = useState(1);
+class ResultsFilter extends Component {
+	state = {
+	  filterItems: FilterItems,
+	  activeFilterId: 1
+	};
 
-  const setFilterId = (id) => {
-    setActiveFilterId(id);
-  };
+	// eslint-disable-next-line no-unused-vars
+	setActiveFilterId = (id, genre) => {
+	  this.setState({
+	    activeFilterId: id
+	  });
 
-  return (
-    <nav>
-      <ul className="resultsFilterContainer">
-        {filterItems.map((item) => (
-          <FilterItem
-            name={item.name}
-            key={item.id}
-            isActive={item.id === activeFilterId}
-            setFilterId={() => setFilterId(item.id)}
-          />
-        ))}
-      </ul>
-    </nav>
-  );
-};
+	  // TODO with Redux dispatch(filterBy(genre));
+	};
+
+	render() {
+	  const {filterItems, activeFilterId} = this.state;
+
+	  return (
+  <nav>
+    <ul className="resultsFilterContainer">
+      {filterItems.map((item) => (
+        <FilterItem
+          name={item.name}
+          key={item.id}
+          isActive={item.id === activeFilterId}
+          setActiveFilterId={() => this.setActiveFilterId(item.id, item.name)}
+        />
+      ))}
+    </ul>
+  </nav>
+	  );
+	}
+}
 
 export default ResultsFilter;

@@ -9,7 +9,7 @@ import {MockOnClick} from '../../mocks/mockData';
 const Search = () => (
   <div className="searchContainer">
     <SearchInput />
-    <Button className="searchButton" onClick={() => MockOnClick('searchButton')} title="SEARCH" />
+    <Button className="searchButton" onClick={() => MockOnClick('search button')} title="SEARCH" />
   </div>
 );
 
