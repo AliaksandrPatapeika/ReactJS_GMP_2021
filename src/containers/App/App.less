@@ -1,6 +1,23 @@
 @import "../../less/reset";
 @import "../../less/variables";
+@import "../../less/common";
 
 body {
 	background-color: @gray;
+
+	/* Sticky Footer with Flexbox */
+	#app {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.mainContainer,
+		.modalWindowContainer {
+			flex: 1 0 auto;
+		}
+
+		.footerContainer {
+			flex-shrink: 0;
+		}
+	}
 }
