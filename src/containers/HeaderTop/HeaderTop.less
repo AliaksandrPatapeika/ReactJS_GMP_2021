@@ -3,7 +3,19 @@
 .headerTopContainer {
 	display: flex;
 	justify-content: space-between;
-	padding: 22px 62px 0;
+
+	.returnToMainButton {
+		cursor: pointer;
+		padding: 3px 6px;
+		color: @red;
+		font-size: 23px;
+		background-color: transparent;
+
+		&:hover,
+		&:focus {
+			color: @red-hover;
+		}
+	}
 
 	.addMovieButton {
 		cursor: pointer;
@@ -16,7 +28,8 @@
 		background-color: @gray;
 		opacity: 0.8;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: @white;
 			background-color: @red-hover;
 			opacity: 1;

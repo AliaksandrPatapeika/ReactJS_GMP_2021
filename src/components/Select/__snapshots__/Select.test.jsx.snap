@@ -20,8 +20,10 @@ exports[`Select renders correctly 1`] = `
       className=" css-g1d714-ValueContainer"
     >
       <div
-        className=" css-1uccc91-singleValue"
-      />
+        className=" css-1wa3eu0-placeholder"
+      >
+        Select...
+      </div>
       <div
         className="css-b8ldur-Input"
       >

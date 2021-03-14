@@ -21,6 +21,7 @@ exports[`HeaderTop renders correctly 1`] = `
   <button
     className="addMovieButton"
     disabled=""
+    id=""
     onClick={[Function]}
     type="button"
   >

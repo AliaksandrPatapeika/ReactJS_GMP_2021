@@ -9,7 +9,7 @@ describe('ItemTitle', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
     const itemTitle = renderer
-      .create(<ItemTitle description={mockMovie.description} />)
+      .create(<ItemTitle name={mockMovie.name} />)
       .toJSON();
 
     expect(itemTitle).toMatchSnapshot();

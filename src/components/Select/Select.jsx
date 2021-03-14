@@ -8,6 +8,7 @@ import MultiValue from './components/MultiValue';
 import Option from './components/Option';
 import ValueContainer from './components/ValueContainer';
 
+/* https://github.com/JedWatson/react-select/issues/3543#issuecomment-565733597 */
 const Select = (props) => {
   const {isMulti, allowSelectAll} = props;
 
@@ -75,7 +76,7 @@ Select.defaultProps = {
   allSelectedLabel: 'All is selected',
   isMulti: false,
   allowSelectAll: false,
-  value: {},
+  value: null,
   allOption: {
     label: 'Select all',
     value: '*'

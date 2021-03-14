@@ -1,5 +1,18 @@
 @import "variables";
 
+.title {
+	color: @white;
+	font-size: 44px;
+	font-family: @NetflixSans-Thin;
+	letter-spacing: 1.5px;
+}
+
+.headerContainer {
+	margin-bottom: 10px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/bgImage.jpg');
+	background-size: cover;
+}
+
 .closeButton {
 	cursor: pointer;
 	align-self: flex-end;
@@ -10,7 +23,8 @@
 	font-size: 18px;
 	background-color: transparent;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: @red;
 	}
 }

@@ -1,110 +1,76 @@
 import './MovieCard.less';
 
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import React, {useContext, useState} from 'react';
 
 import Button from '../../components/Button';
 import ItemGenre from '../../components/ItemGenre';
-import ItemImage from '../../components/ItemImage';
 import ItemReleaseDate from '../../components/ItemReleaseDate';
 import ItemTitle from '../../components/ItemTitle';
-import ModalWindowContext from '../../context';
+import MovieContext from '../../context';
 import threeDotsIconLink from '../../img/moreButton.svg';
+import noImage from '../../img/no-image.png';
 import MovieCardMenu from '../MovieCardMenu';
 
-class MovieCard extends Component {
-	state = {
-	  showSubMenu: false
-	};
+const MovieCard = ({movie}) => {
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  const {showModalWindow, showMovieDetails} = useContext(MovieContext);
 
-	componentDidUpdate() {
-	  const {showSubMenu} = this.state;
+  const showMovieDetailsWindow = () => {
+    showMovieDetails(movie);
+  };
 
-	  if (showSubMenu) {
-	    window.addEventListener('keydown', this.handleKeyDown);
-	  } else {
-	    window.removeEventListener('keydown', this.handleKeyDown);
-	  }
-	}
+  const showMovieCardSubMenu = () => {
+    setShowSubMenu(true);
+  };
 
-	componentWillUnmount() {
-	  window.removeEventListener('keydown', this.handleKeyDown);
-	}
+  const closeMovieCardSubMenu = () => {
+    setShowSubMenu(false);
+  };
 
-	handleKeyDown = (event) => {
-	  if (event.key === 'Escape') {
-	    this.closeSubMenu();
-	  }
-	}
+  const showEditMovieWindow = () => {
+    showModalWindow('editMovie', movie);
+  };
 
-	showSubMenu = () => {
-	  this.setState({
-	    showSubMenu: true
-	  });
-	}
+  const showDeleteMovieWindow = () => {
+    showModalWindow('deleteMovie', movie);
+  };
 
-	closeSubMenu = () => {
-	  this.setState({
-	    showSubMenu: false
-	  });
-	}
-
-	showEditWindow = () => {
-	  const {movie} = this.props;
-	  const {showModalWindow} = this.context;
-
-	  this.closeSubMenu();
-	  showModalWindow('editMovie', movie);
-	}
-
-	showDeleteWindow = () => {
-	  const {movie} = this.props;
-	  const {showModalWindow} = this.context;
-
-	  this.closeSubMenu();
-	  showModalWindow('deleteMovie', movie);
-	}
-
-	render() {
-	  const {showSubMenu} = this.state;
-	  const {
-	    movie: {
-	      url, description, releaseDate, genre
-	    }
-	  } = this.props;
-
-	  return (
-  <div className="movieCardContainer">
-    <ItemImage url={url} />
-    <Button className="threeDotsIcon" onClick={this.showSubMenu}>
-      <img src={threeDotsIconLink} alt="MovieButton" />
-    </Button>
-    {showSubMenu && (
-    <MovieCardMenu
-      closeSubMenu={this.closeSubMenu}
-      showEditWindow={this.showEditWindow}
-      showDeleteWindow={this.showDeleteWindow}
-    />
-    )}
-    <div className="descriptionContainer">
-      <ItemTitle description={description} />
-      <ItemReleaseDate releaseDate={releaseDate.slice(0, 4)} />
+  return (
+    <div
+      className="movieCardContainer"
+      onMouseLeave={closeMovieCardSubMenu}
+    >
+      <Button className="imageButton" onClick={showMovieDetailsWindow}>
+        <img src={movie.movieURL || noImage} alt="item" className="imageItem" />
+      </Button>
+      <Button className="threeDotsIcon" onClick={showMovieCardSubMenu}>
+        <img src={threeDotsIconLink} alt="movie button" />
+      </Button>
+      <MovieCardMenu
+        showSubMenu={showSubMenu}
+        closeSubMenu={closeMovieCardSubMenu}
+        showEditMovieWindow={showEditMovieWindow}
+        showDeleteMovieWindow={showDeleteMovieWindow}
+      />
+      <div className="descriptionContainer">
+        <ItemTitle name={movie.name} />
+        <ItemReleaseDate year={new Date(movie.releaseDate).getFullYear()} />
+      </div>
+      <ItemGenre genre={movie.genre} />
     </div>
-    <ItemGenre genre={genre} />
-  </div>
-	  );
-	}
-}
-
-MovieCard.contextType = ModalWindowContext;
+  );
+};
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    movieURL: PropTypes.string,
+    name: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired
+    genre: PropTypes.string,
+    overview: PropTypes.string,
+    runtime: PropTypes.number
   }).isRequired
 };
 

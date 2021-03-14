@@ -3,12 +3,12 @@
 exports[`MovieCardMenu renders correctly 1`] = `
 <div
   className="movieCardMenuContainer"
-  onClick={[Function]}
-  onTouchEnd={[Function]}
+  onBlur={[Function]}
 >
   <button
     className="closeButton"
     disabled=""
+    id="movieCardMenuCloseButton"
     onClick={[Function]}
     type="button"
   >

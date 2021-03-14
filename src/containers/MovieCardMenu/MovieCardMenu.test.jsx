@@ -7,9 +7,10 @@ describe('MovieCardMenu', () => {
   test('renders correctly', () => {
     const movieCardMenu = renderer
       .create(<MovieCardMenu
+        showSubMenu
         closeSubMenu={Function}
-        showEditWindow={Function}
-        showDeleteWindow={Function}
+        showEditMovieWindow={Function}
+        showDeleteMovieWindow={Function}
       />)
       .toJSON();
 

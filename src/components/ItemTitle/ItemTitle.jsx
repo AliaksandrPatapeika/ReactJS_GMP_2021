@@ -3,10 +3,10 @@ import './ItemTitle.less';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ItemTitle = ({description}) => <div className="itemTitle">{description}</div>;
+const ItemTitle = ({name}) => <div className="itemTitle">{name}</div>;
 
 ItemTitle.propTypes = {
-  description: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 export default ItemTitle;

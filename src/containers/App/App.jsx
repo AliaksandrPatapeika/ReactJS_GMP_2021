@@ -1,54 +1,76 @@
 import './App.less';
 
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 
-import ModalWindowContext from '../../context';
+import MovieContext from '../../context';
 import ErrorBoundary from '../ErrorBoundary';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
 import ModalWindow from '../ModalWindow';
+import MovieDetails from '../MovieDetails';
 
-class App extends Component {
-	state = {
-	  activeModalWindow: false,
-	  activeMovie: null
-	};
+const App = () => {
+  const [modalWindow, setModalWindow] = useState({
+    activeModalWindow: false,
+    activeModalMovie: null
+  });
+  const [movieDetails, setMovieDetails] = useState({
+    activeMovieDetails: false,
+    activeMovieDetailsMovie: null
+  });
 
-	showModalWindow = (activeModalWindow, activeMovie) => {
-	  this.setState({
-	    activeModalWindow,
-	    activeMovie
-	  });
-	};
+  const showModalWindow = (activeModalWindow, activeModalMovie) => {
+    setModalWindow(() => ({
+      activeModalWindow,
+      activeModalMovie
+    }));
+  };
 
-	closeModalWindow = () => {
-	  this.setState({
-	    activeModalWindow: false,
-	    activeMovie: null
-	  });
-	};
+  const closeModalWindow = () => {
+    setModalWindow(() => ({
+      activeModalWindow: false,
+      activeModalMovie: null
+    }));
+  };
 
-	render() {
-	  const {activeModalWindow, activeMovie} = this.state;
+  const showMovieDetails = (activeMovieDetailsMovie) => {
+    setMovieDetails(() => ({
+      activeMovieDetails: true,
+      activeMovieDetailsMovie
+    }));
+  };
 
-	  return (
-  <ErrorBoundary>
-    <ModalWindowContext.Provider value={{
-				  activeModalWindow,
-				  activeMovie,
-				  showModalWindow: this.showModalWindow,
-				  closeModalWindow: this.closeModalWindow
-    }}
-    >
-      <Header />
-      <Main />
-      <ModalWindow />
-    </ModalWindowContext.Provider>
-    <Footer />
-  </ErrorBoundary>
-	  );
-	}
-}
+  const closeMovieDetails = () => {
+    setMovieDetails(() => ({
+      activeMovieDetails: false,
+      activeMovieDetailsMovie: null
+    }));
+  };
+
+  return (
+    <ErrorBoundary>
+      <MovieContext.Provider value={{
+        // State
+			  activeModalWindow: modalWindow.activeModalWindow,
+			  activeModalMovie: modalWindow.activeModalMovie,
+			  activeMovieDetails: movieDetails.activeMovieDetails,
+			  activeMovieDetailsMovie: movieDetails.activeMovieDetailsMovie,
+        // Actions
+			  showModalWindow,
+			  closeModalWindow,
+			  showMovieDetails,
+			  closeMovieDetails
+      }}
+      >
+        <MovieDetails />
+        <Header />
+        <Main />
+        <ModalWindow />
+      </MovieContext.Provider>
+      <Footer />
+    </ErrorBoundary>
+  );
+};
 
 export default App;

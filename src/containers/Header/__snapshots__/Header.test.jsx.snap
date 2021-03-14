@@ -27,6 +27,7 @@ exports[`Header renders correctly 1`] = `
       <button
         className="addMovieButton"
         disabled=""
+        id=""
         onClick={[Function]}
         type="button"
       >
@@ -38,7 +39,7 @@ exports[`Header renders correctly 1`] = `
       className="headerMainContainer"
     >
       <h1
-        className="headerTitle"
+        className="title"
       >
         FIND YOUR MOVIE
       </h1>
@@ -53,6 +54,7 @@ exports[`Header renders correctly 1`] = `
         <button
           className="searchButton"
           disabled=""
+          id=""
           onClick={[Function]}
           type="button"
         >

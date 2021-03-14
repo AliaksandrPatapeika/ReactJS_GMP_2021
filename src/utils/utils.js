@@ -1,7 +1,11 @@
 import {filter, includes} from 'lodash';
 
-const getGenres = (Genres, movie) => filter(Genres, (genre) => includes(movie.genre.split(', '), genre.label));
+const getGenres = (Genres, movie) => {
+  if (movie && movie.genre) {
+    return filter(Genres, (genre) => includes(movie.genre.split(', '), genre.label));
+  }
 
-export default {
-  getGenres
+  return [];
 };
+
+export default getGenres;

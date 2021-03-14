@@ -28,6 +28,7 @@ Array [
         <button
           className="addMovieButton"
           disabled=""
+          id=""
           onClick={[Function]}
           type="button"
         >
@@ -39,7 +40,7 @@ Array [
         className="headerMainContainer"
       >
         <h1
-          className="headerTitle"
+          className="title"
         >
           FIND YOUR MOVIE
         </h1>
@@ -54,6 +55,7 @@ Array [
           <button
             className="searchButton"
             disabled=""
+            id=""
             onClick={[Function]}
             type="button"
           >
@@ -234,6 +236,7 @@ Array [
         <button
           className="arrow"
           disabled=""
+          id=""
           onClick={[Function]}
           type="button"
         >

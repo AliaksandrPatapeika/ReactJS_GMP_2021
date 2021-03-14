@@ -3,21 +3,32 @@
 exports[`MovieCard renders correctly 1`] = `
 <div
   className="movieCardContainer"
+  onMouseLeave={[Function]}
 >
-  <img
-    alt="Item"
-    className="itemImage"
-    src="test-file-stub"
-  />
   <button
-    className="threeDotsIcon"
+    className="imageButton"
     disabled=""
+    id=""
     onClick={[Function]}
     type="button"
   >
     
     <img
-      alt="MovieButton"
+      alt="item"
+      className="imageItem"
+      src="test-file-stub"
+    />
+  </button>
+  <button
+    className="threeDotsIcon"
+    disabled=""
+    id=""
+    onClick={[Function]}
+    type="button"
+  >
+    
+    <img
+      alt="movie button"
       src="test-file-stub"
     />
   </button>

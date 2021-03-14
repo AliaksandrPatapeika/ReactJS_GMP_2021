@@ -7,6 +7,15 @@
 	color: @white;
 	font-family: @NetflixSans-Regular;
 
+	.imageButton {
+		background-color: transparent;
+
+		.imageItem {
+			cursor: pointer;
+			object-fit: cover;
+		}
+	}
+
 	.threeDotsIcon {
 		position: absolute;
 		right: 10px;
@@ -17,6 +26,10 @@
 		border-radius: 50%;
 		opacity: 0;
 		background-color: @black;
+
+		&:focus {
+			opacity: 1;
+		}
 	}
 
 	.descriptionContainer {

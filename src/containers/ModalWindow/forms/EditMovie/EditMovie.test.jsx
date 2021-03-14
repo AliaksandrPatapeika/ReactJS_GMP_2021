@@ -2,6 +2,7 @@ import {head} from 'lodash';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import MovieContext from '../../../../context';
 import {MockMovies} from '../../../../mocks/mockData';
 import EditMovie from './EditMovie';
 
@@ -9,7 +10,14 @@ describe('EditMovie', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
     const editMovie = renderer
-      .create(<EditMovie title="title" movie={mockMovie} />)
+      .create(
+        <MovieContext.Provider value={{
+				  activeModalWindow: 'editMovie'
+        }}
+        >
+          <EditMovie title="title" movie={mockMovie} />
+        </MovieContext.Provider>
+      )
       .toJSON();
 
     expect(editMovie).toMatchSnapshot();

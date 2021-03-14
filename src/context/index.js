@@ -1,3 +1,3 @@
-import ModalWindowContext from './modalWindowContext';
+import MovieContext from './movieContext';
 
-export default ModalWindowContext;
+export default MovieContext;

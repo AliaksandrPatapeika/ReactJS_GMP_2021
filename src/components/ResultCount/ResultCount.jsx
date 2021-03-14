@@ -14,7 +14,11 @@ const ResultCount = ({count}) => (
 );
 
 ResultCount.propTypes = {
-  count: PropTypes.number.isRequired
+  count: PropTypes.number
+};
+
+ResultCount.defaultProps = {
+  count: 0
 };
 
 export default ResultCount;

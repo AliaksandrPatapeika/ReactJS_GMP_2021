@@ -1,3 +1,3 @@
-import Utils from './utils';
+import getGenres from './utils';
 
-export default Utils;
+export default getGenres;

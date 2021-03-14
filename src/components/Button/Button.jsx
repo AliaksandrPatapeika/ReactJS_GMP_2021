@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Button = ({
-  type, className, onClick, disabled, title, children
+  type, id, className, onClick, disabled, title, children
 }) => (
   // eslint-disable-next-line react/button-has-type
-  <button type={type} disabled={disabled} className={className} onClick={onClick}>
+  <button type={type} disabled={disabled} id={id} className={className} onClick={onClick}>
     {title}
     {children}
   </button>
@@ -13,6 +13,7 @@ const Button = ({
 
 Button.propTypes = {
   type: PropTypes.string,
+  id: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.string,
@@ -22,6 +23,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: 'button',
+  id: '',
   className: '',
   onClick: () => {},
   disabled: '',

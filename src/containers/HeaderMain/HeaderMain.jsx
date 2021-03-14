@@ -6,7 +6,7 @@ import Search from '../Search';
 
 const HeaderMain = () => (
   <div className="headerMainContainer">
-    <h1 className="headerTitle">FIND YOUR MOVIE</h1>
+    <h1 className="title">FIND YOUR MOVIE</h1>
     <Search />
   </div>
 );

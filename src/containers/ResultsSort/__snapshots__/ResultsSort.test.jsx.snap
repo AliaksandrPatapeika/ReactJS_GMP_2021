@@ -114,6 +114,7 @@ exports[`ResultsSort renders correctly 1`] = `
   <button
     className="arrow"
     disabled=""
+    id=""
     onClick={[Function]}
     type="button"
   >
