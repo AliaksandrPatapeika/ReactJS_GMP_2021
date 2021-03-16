@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemTitle renders correctly 1`] = `
+exports[`MovieTitle renders correctly 1`] = `
 <div
-  className="itemTitle"
+  className="movieTitle"
 >
   Pulp Fiction
 </div>

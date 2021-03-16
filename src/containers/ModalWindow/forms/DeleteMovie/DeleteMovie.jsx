@@ -7,15 +7,15 @@ import Button from '../../../../components/Button';
 import MovieContext from '../../../../context';
 import {MockOnClick} from '../../../../mocks/mockData';
 
-const DeleteMovie = ({title, movie}) => {
+const DeleteMovie = ({formTitle, movie}) => {
   const {activeModalWindow} = useContext(MovieContext);
 
   return (
     <>
       {activeModalWindow === 'deleteMovie' && (
       <>
-        <span className="title">{title}</span>
-        <form onSubmit={() => MockOnClick('form onSubmit', movie)}>
+        <span className="title">{formTitle}</span>
+        <form onSubmit={() => MockOnClick('form Delete movie onSubmit movie.id', movie.id)}>
           <div className="formInput">
             <h1 className="content">Are you sure you want to delete this movie?</h1>
           </div>
@@ -34,15 +34,20 @@ const DeleteMovie = ({title, movie}) => {
 };
 
 DeleteMovie.propTypes = {
-  title: PropTypes.string.isRequired,
+  formTitle: PropTypes.string.isRequired,
   movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    movieURL: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    genre: PropTypes.string,
+    budget: PropTypes.number,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    id: PropTypes.number,
     overview: PropTypes.string,
-    runtime: PropTypes.number
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    revenue: PropTypes.number,
+    runtime: PropTypes.number,
+    tagline: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+    vote_count: PropTypes.number
   })
 };
 

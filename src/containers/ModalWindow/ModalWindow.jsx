@@ -43,9 +43,9 @@ const ModalWindow = () => {
               <i className="fa fa-times" aria-hidden="true" />
             </Button>
             <div className="modalBody">
-              <AddMovie title="ADD MOVIE" />
-              <EditMovie title="EDIT MOVIE" movie={activeModalMovie} />
-              <DeleteMovie title="DELETE MOVIE" movie={activeModalMovie} />
+              <AddMovie formTitle="ADD MOVIE" />
+              <EditMovie formTitle="EDIT MOVIE" movie={activeModalMovie} />
+              <DeleteMovie formTitle="DELETE MOVIE" movie={activeModalMovie} />
             </div>
           </div>
         </Blur>

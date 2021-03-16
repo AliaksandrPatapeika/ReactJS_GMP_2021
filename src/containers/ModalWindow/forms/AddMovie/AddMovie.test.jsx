@@ -12,7 +12,7 @@ describe('AddMovie', () => {
 				  activeModalWindow: 'addMovie'
         }}
         >
-          <AddMovie title="title" />
+          <AddMovie formTitle="title" />
         </MovieContext.Provider>
       )
       .toJSON();

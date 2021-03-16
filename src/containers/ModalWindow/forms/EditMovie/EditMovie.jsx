@@ -10,15 +10,20 @@ import MovieContext from '../../../../context';
 import {MockOnClick} from '../../../../mocks/mockData';
 import getGenres from '../../../../utils';
 
-const EditMovie = ({title, movie}) => {
-  const [optionSelected, setOptionSelected] = useState(getGenres(Genres, movie));
+const EditMovie = ({
+  formTitle,
+  movie: {
+    genres, id, title, release_date, poster_path, overview, runtime
+  }
+}) => {
+  const [optionSelected, setOptionSelected] = useState(getGenres(Genres, genres));
 
   const selectChange = (selected) => {
     setOptionSelected(selected);
   };
 
   const selectReset = () => {
-    setOptionSelected(getGenres(Genres, movie));
+    setOptionSelected(getGenres(Genres, genres));
   };
 
   const {activeModalWindow} = useContext(MovieContext);
@@ -27,8 +32,11 @@ const EditMovie = ({title, movie}) => {
     <>
       {activeModalWindow === 'editMovie' && (
       <>
-        <span className="title">{title}</span>
-        <form onSubmit={() => MockOnClick('form onSubmit', movie)} onReset={selectReset}>
+        <span className="title">{formTitle}</span>
+        <form
+          onSubmit={() => MockOnClick('form Edit movie onSubmit movie.id', id)}
+          onReset={selectReset}
+        >
           <div className="formInput">
             <label htmlFor="id" className="label">
               MOVIE ID
@@ -38,7 +46,7 @@ const EditMovie = ({title, movie}) => {
               name="id"
               id="id"
               className="input"
-              value={movie.id}
+              value={id}
               readOnly
             />
           </div>
@@ -52,7 +60,7 @@ const EditMovie = ({title, movie}) => {
               id="title"
               className="input"
               placeholder="Title here"
-              defaultValue={movie.name}
+              defaultValue={title}
               autoComplete="off"
             />
           </div>
@@ -66,7 +74,7 @@ const EditMovie = ({title, movie}) => {
               id="releaseDate"
               className="input"
               placeholder="Select Date"
-              defaultValue={movie.releaseDate}
+              defaultValue={release_date}
               required
             />
           </div>
@@ -80,7 +88,7 @@ const EditMovie = ({title, movie}) => {
               id="movieURL"
               className="input"
               placeholder="Movie URL here"
-              defaultValue={movie.movieURL}
+              defaultValue={poster_path}
               autoComplete="off"
             />
           </div>
@@ -113,7 +121,7 @@ const EditMovie = ({title, movie}) => {
               id="overview"
               className="input"
               placeholder="Overview here"
-              defaultValue={movie.overview}
+              defaultValue={overview}
               autoComplete="off"
             />
           </div>
@@ -127,7 +135,7 @@ const EditMovie = ({title, movie}) => {
               id="runtime"
               className="input"
               placeholder="Runtime here"
-              defaultValue={movie.runtime}
+              defaultValue={runtime}
               autoComplete="off"
             />
           </div>
@@ -151,20 +159,27 @@ const EditMovie = ({title, movie}) => {
 };
 
 EditMovie.propTypes = {
-  title: PropTypes.string.isRequired,
+  formTitle: PropTypes.string.isRequired,
   movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    movieURL: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    genre: PropTypes.string,
+    budget: PropTypes.number,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    id: PropTypes.number,
     overview: PropTypes.string,
-    runtime: PropTypes.number
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    revenue: PropTypes.number,
+    runtime: PropTypes.number,
+    tagline: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+    vote_count: PropTypes.number
   })
 };
 
 EditMovie.defaultProps = {
-  movie: null
+  movie: {
+    genres: []
+  }
 };
 
 export default EditMovie;

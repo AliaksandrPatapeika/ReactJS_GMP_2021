@@ -21,6 +21,7 @@
 		"react/state-in-constructor": ["error", "never"],
 		"no-tabs": ["error", {"allowIndentationTabs": true}],
 		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+		"camelcase": "off",
 		"jsx-a11y/label-has-associated-control": [
 			"error", {
 				"required": {

@@ -9,7 +9,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -17,8 +17,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -31,26 +31,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Pulp Fiction
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         2004
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Action & Adventure
     </div>
@@ -60,7 +60,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -68,8 +68,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -82,26 +82,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Bohemian Rhapsody
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         2003
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Drama, Biography, Music
     </div>
@@ -111,7 +111,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -119,8 +119,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -133,26 +133,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Kill Bill: Vol 2
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         1994
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Oscar winning Movie
     </div>
@@ -162,7 +162,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -170,8 +170,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -184,26 +184,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Avengers: War of Infinity
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         2004
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Action & Adventure
     </div>
@@ -213,7 +213,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -221,8 +221,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -235,26 +235,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Inception
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         2003
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Action & Adventure
     </div>
@@ -264,7 +264,7 @@ exports[`MoviesList renders correctly 1`] = `
     onMouseLeave={[Function]}
   >
     <button
-      className="imageButton"
+      className="posterButton"
       disabled=""
       id=""
       onClick={[Function]}
@@ -272,8 +272,8 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="item"
-        className="imageItem"
+        alt="poster"
+        className="poster"
         src="test-file-stub"
       />
     </button>
@@ -286,26 +286,26 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="movie button"
+        alt="movie card menu"
         src="test-file-stub"
       />
     </button>
     <div
-      className="descriptionContainer"
+      className="movieTitleReleaseDateContainer"
     >
       <div
-        className="itemTitle"
+        className="movieTitle"
       >
         Reservoir dogs
       </div>
       <div
-        className="itemReleaseDate"
+        className="movieReleaseDate"
       >
         1994
       </div>
     </div>
     <div
-      className="itemGenre"
+      className="movieGenres"
     >
       Oscar winning Movie
     </div>

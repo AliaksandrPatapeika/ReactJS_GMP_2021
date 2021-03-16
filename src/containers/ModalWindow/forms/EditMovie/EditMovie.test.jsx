@@ -15,7 +15,7 @@ describe('EditMovie', () => {
 				  activeModalWindow: 'editMovie'
         }}
         >
-          <EditMovie title="title" movie={mockMovie} />
+          <EditMovie formTitle="title" movie={mockMovie} />
         </MovieContext.Provider>
       )
       .toJSON();

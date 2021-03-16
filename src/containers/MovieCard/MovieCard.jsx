@@ -4,15 +4,20 @@ import PropTypes from 'prop-types';
 import React, {useContext, useState} from 'react';
 
 import Button from '../../components/Button';
-import ItemGenre from '../../components/ItemGenre';
-import ItemReleaseDate from '../../components/ItemReleaseDate';
-import ItemTitle from '../../components/ItemTitle';
+import MovieGenres from '../../components/MovieGenres';
+import MovieReleaseDate from '../../components/MovieReleaseDate';
+import MovieTitle from '../../components/MovieTitle';
 import MovieContext from '../../context';
 import threeDotsIconLink from '../../img/moreButton.svg';
 import noImage from '../../img/no-image.png';
 import MovieCardMenu from '../MovieCardMenu';
 
-const MovieCard = ({movie}) => {
+const MovieCard = ({
+  movie,
+  movie: {
+    poster_path, title, release_date, genres
+  }
+}) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const {showModalWindow, showMovieDetails} = useContext(MovieContext);
 
@@ -41,11 +46,11 @@ const MovieCard = ({movie}) => {
       className="movieCardContainer"
       onMouseLeave={closeMovieCardSubMenu}
     >
-      <Button className="imageButton" onClick={showMovieDetailsWindow}>
-        <img src={movie.movieURL || noImage} alt="item" className="imageItem" />
+      <Button className="posterButton" onClick={showMovieDetailsWindow}>
+        <img src={poster_path || noImage} alt="poster" className="poster" />
       </Button>
       <Button className="threeDotsIcon" onClick={showMovieCardSubMenu}>
-        <img src={threeDotsIconLink} alt="movie button" />
+        <img src={threeDotsIconLink} alt="movie card menu" />
       </Button>
       <MovieCardMenu
         showSubMenu={showSubMenu}
@@ -53,25 +58,34 @@ const MovieCard = ({movie}) => {
         showEditMovieWindow={showEditMovieWindow}
         showDeleteMovieWindow={showDeleteMovieWindow}
       />
-      <div className="descriptionContainer">
-        <ItemTitle name={movie.name} />
-        <ItemReleaseDate year={new Date(movie.releaseDate).getFullYear()} />
+      <div className="movieTitleReleaseDateContainer">
+        <MovieTitle title={title} />
+        <MovieReleaseDate year={new Date(release_date).getFullYear()} />
       </div>
-      <ItemGenre genre={movie.genre} />
+      <MovieGenres genres={genres.join(', ')} />
     </div>
   );
 };
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    movieURL: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    genre: PropTypes.string,
+    budget: PropTypes.number,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    id: PropTypes.number,
     overview: PropTypes.string,
-    runtime: PropTypes.number
-  }).isRequired
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    revenue: PropTypes.number,
+    runtime: PropTypes.number,
+    tagline: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+    vote_count: PropTypes.number
+  })
+};
+
+MovieCard.defaultProps = {
+  movie: null
 };
 
 export default MovieCard;

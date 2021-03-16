@@ -6,7 +6,7 @@ exports[`MovieCard renders correctly 1`] = `
   onMouseLeave={[Function]}
 >
   <button
-    className="imageButton"
+    className="posterButton"
     disabled=""
     id=""
     onClick={[Function]}
@@ -14,8 +14,8 @@ exports[`MovieCard renders correctly 1`] = `
   >
     
     <img
-      alt="item"
-      className="imageItem"
+      alt="poster"
+      className="poster"
       src="test-file-stub"
     />
   </button>
@@ -28,26 +28,26 @@ exports[`MovieCard renders correctly 1`] = `
   >
     
     <img
-      alt="movie button"
+      alt="movie card menu"
       src="test-file-stub"
     />
   </button>
   <div
-    className="descriptionContainer"
+    className="movieTitleReleaseDateContainer"
   >
     <div
-      className="itemTitle"
+      className="movieTitle"
     >
       Pulp Fiction
     </div>
     <div
-      className="itemReleaseDate"
+      className="movieReleaseDate"
     >
       2004
     </div>
   </div>
   <div
-    className="itemGenre"
+    className="movieGenres"
   >
     Action & Adventure
   </div>

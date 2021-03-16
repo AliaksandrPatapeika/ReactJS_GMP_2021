@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemGenre renders correctly 1`] = `
+exports[`MovieGenres renders correctly 1`] = `
 <div
-  className="itemGenre"
+  className="movieGenres"
 >
   Action & Adventure
 </div>

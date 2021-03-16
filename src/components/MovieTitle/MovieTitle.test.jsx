@@ -3,15 +3,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import {MockMovies} from '../../mocks/mockData';
-import ItemTitle from './ItemTitle';
+import MovieTitle from './MovieTitle';
 
-describe('ItemTitle', () => {
+describe('MovieTitle', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
-    const itemTitle = renderer
-      .create(<ItemTitle name={mockMovie.name} />)
+    const movieTitle = renderer
+      .create(<MovieTitle title={mockMovie.title} />)
       .toJSON();
 
-    expect(itemTitle).toMatchSnapshot();
+    expect(movieTitle).toMatchSnapshot();
   });
 });

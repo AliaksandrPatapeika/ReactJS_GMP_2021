@@ -15,7 +15,7 @@ describe('DeleteMovie', () => {
 				  activeModalWindow: 'deleteMovie'
         }}
         >
-          <DeleteMovie title="title" movie={mockMovie} />
+          <DeleteMovie formTitle="title" movie={mockMovie} />
         </MovieContext.Provider>
       )
       .toJSON();

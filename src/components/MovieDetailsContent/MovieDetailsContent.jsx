@@ -13,20 +13,20 @@ const MovieDetailsContent = () => {
   }, [activeMovieDetailsMovie]);
 
   const {
-    movieURL, name, rating, genre, releaseDate, runtime, overview
+    poster_path, title, vote_average, tagline, release_date, runtime, overview
   } = activeMovieDetailsMovie;
 
   return (
     <div className="movieDetailsContentContainer">
-      <img src={movieURL || noImage} alt="movie details" className="movieDetailsImage" />
+      <img src={poster_path || noImage} alt="movie details poster" className="movieDetailsPoster" />
       <div className="movieDetailsContent">
-        <div className="movieDetailsNameRating">
-          <span className="movieDetailsName">{name}</span>
-          <div className="movieDetailsRating">{rating || '-'}</div>
+        <div className="movieDetailsTitleRating">
+          <span className="movieDetailsTitle">{title}</span>
+          <div className="movieDetailsRating">{vote_average || '-'}</div>
         </div>
-        <div>{genre || 'No genre'}</div>
-        <div className="movieDetailsDurationRelease">
-          <div>{new Date(releaseDate).getFullYear()}</div>
+        <div>{tagline || 'No tagline'}</div>
+        <div className="movieDetailsReleaseDateRuntime">
+          <div>{new Date(release_date).getFullYear()}</div>
           <div>
             {runtime || 0}
             {' '}

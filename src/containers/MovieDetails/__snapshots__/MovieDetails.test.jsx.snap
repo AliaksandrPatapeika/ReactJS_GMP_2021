@@ -42,18 +42,18 @@ exports[`MovieDetails renders correctly 1`] = `
       className="movieDetailsContentContainer"
     >
       <img
-        alt="movie details"
-        className="movieDetailsImage"
+        alt="movie details poster"
+        className="movieDetailsPoster"
         src="test-file-stub"
       />
       <div
         className="movieDetailsContent"
       >
         <div
-          className="movieDetailsNameRating"
+          className="movieDetailsTitleRating"
         >
           <span
-            className="movieDetailsName"
+            className="movieDetailsTitle"
           >
             Pulp Fiction
           </span>
@@ -64,10 +64,10 @@ exports[`MovieDetails renders correctly 1`] = `
           </div>
         </div>
         <div>
-          Action & Adventure
+          Mock tagline!
         </div>
         <div
-          className="movieDetailsDurationRelease"
+          className="movieDetailsReleaseDateRuntime"
         >
           <div>
             2004

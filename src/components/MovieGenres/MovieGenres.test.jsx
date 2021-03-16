@@ -3,15 +3,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import {MockMovies} from '../../mocks/mockData';
-import ItemGenre from './ItemGenre';
+import MovieGenres from './MovieGenres';
 
-describe('ItemGenre', () => {
+describe('MovieGenres', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
-    const itemGenre = renderer
-      .create(<ItemGenre genre={mockMovie.genre} />)
+    const movieGenres = renderer
+      .create(<MovieGenres genres={mockMovie.genres.join(', ')} />)
       .toJSON();
 
-    expect(itemGenre).toMatchSnapshot();
+    expect(movieGenres).toMatchSnapshot();
   });
 });
