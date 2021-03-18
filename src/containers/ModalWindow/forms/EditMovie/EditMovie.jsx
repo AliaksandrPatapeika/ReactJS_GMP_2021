@@ -7,8 +7,8 @@ import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import {Genres} from '../../../../constants';
 import MovieContext from '../../../../context';
-import {MockOnClick} from '../../../../mocks/mockData';
-import getGenres from '../../../../utils';
+import {MockOnClick} from '../../../../tests/mocks/mockData';
+import {getGenres} from '../../../../utils';
 
 const EditMovie = ({
   formTitle,

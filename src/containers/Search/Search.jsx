@@ -4,7 +4,7 @@ import React from 'react';
 
 import Button from '../../components/Button';
 import SearchInput from '../../components/SearchInput';
-import {MockOnClick} from '../../mocks/mockData';
+import {MockOnClick} from '../../tests/mocks/mockData';
 
 const Search = () => (
   <div className="searchContainer">

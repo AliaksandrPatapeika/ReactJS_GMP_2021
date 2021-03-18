@@ -5,7 +5,7 @@ import React, {useContext} from 'react';
 
 import Button from '../../../../components/Button';
 import MovieContext from '../../../../context';
-import {MockOnClick} from '../../../../mocks/mockData';
+import {MockOnClick} from '../../../../tests/mocks/mockData';
 
 const DeleteMovie = ({formTitle, movie}) => {
   const {activeModalWindow} = useContext(MovieContext);

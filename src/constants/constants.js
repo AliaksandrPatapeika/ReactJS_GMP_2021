@@ -7,16 +7,25 @@ export const FilterItems = [
 ];
 
 export const Genres = [
-  {id: 1, value: 'action', label: 'Action & Adventure'},
-  {id: 2, value: 'music', label: 'Music'},
-  {id: 3, value: 'horror', label: 'Horror'},
-  {id: 4, value: 'biography', label: 'Biography'},
-  {id: 5, value: 'drama', label: 'Drama'},
-  {id: 6, value: 'oscar', label: 'Oscar winning Movie'},
-  {id: 7, value: 'documentary', label: 'Documentary'},
-  {id: 8, value: 'comedy', label: 'Comedy'},
-  {id: 9, value: 'horror', label: 'Horror'},
-  {id: 10, value: 'crime', label: 'Crime'}
+  {id: 1, value: 'drama', label: 'Drama'},
+  {id: 2, value: 'romance', label: 'Romance'},
+  {id: 3, value: 'animation', label: 'Animation'},
+  {id: 4, value: 'adventure', label: 'Adventure'},
+  {id: 5, value: 'family', label: 'Family'},
+  {id: 6, value: 'comedy', label: 'Comedy'},
+  {id: 7, value: 'fantasy', label: 'Fantasy'},
+  {id: 8, value: 'scienceFiction', label: 'Science Fiction'},
+  {id: 9, value: 'action', label: 'Action'},
+  {id: 10, value: 'mystery', label: 'Mystery'},
+  {id: 11, value: 'thriller', label: 'Thriller'},
+  {id: 12, value: 'music', label: 'Music'},
+  {id: 13, value: 'war', label: 'War'},
+  {id: 14, value: 'crime', label: 'Crime'},
+  {id: 15, value: 'history', label: 'History'},
+  {id: 16, value: 'horror', label: 'Horror'},
+  {id: 17, value: 'western', label: 'Western'},
+  {id: 18, value: 'documentary', label: 'Documentary'},
+  {id: 19, value: 'tvMovie', label: 'TV Movie'}
 ];
 
 export const SortBy = [

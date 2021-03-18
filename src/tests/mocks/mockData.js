@@ -1,9 +1,9 @@
-import image01 from '../img/posters/01-pulp-fiction.jpg';
-import image02 from '../img/posters/02-bohemian-rhapsody.jpg';
-import image03 from '../img/posters/03-kill-bill.jpg';
-import image04 from '../img/posters/04-avengers-infinity-war.jpg';
-import image05 from '../img/posters/05-inception.jpg';
-import image06 from '../img/posters/06-reservoir-dogs.jpg';
+import image01 from '../../img/posters/01-pulp-fiction.jpg';
+import image02 from '../../img/posters/02-bohemian-rhapsody.jpg';
+import image03 from '../../img/posters/03-kill-bill.jpg';
+import image04 from '../../img/posters/04-avengers-infinity-war.jpg';
+import image05 from '../../img/posters/05-inception.jpg';
+import image06 from '../../img/posters/06-reservoir-dogs.jpg';
 
 export const MockMovies = [
   {
@@ -91,8 +91,6 @@ export const MockMovies = [
     vote_count: 1989
   }
 ];
-
-export const MockResultCount = 39; // 0 for testing No Movies found page
 
 // eslint-disable-next-line no-console
 export const MockOnClick = (button, attrs) => console.log(`Clicked from "${button}"`, attrs);

@@ -17,8 +17,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>
@@ -68,8 +69,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>
@@ -119,8 +121,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>
@@ -170,8 +173,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>
@@ -221,8 +225,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>
@@ -272,8 +277,9 @@ exports[`MoviesList renders correctly 1`] = `
     >
       
       <img
-        alt="poster"
-        className="poster"
+        alt="movie card poster"
+        className="movieCardPoster"
+        onError={[Function]}
         src="test-file-stub"
       />
     </button>

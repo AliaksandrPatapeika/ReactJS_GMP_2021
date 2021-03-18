@@ -189,17 +189,328 @@ exports[`Main renders correctly 1`] = `
     <span
       className="resultCount"
     >
-      39
+      6
        
     </span>
     <span>
       movies found
     </span>
   </div>
-  <h3
-    className="loading"
+  <div
+    className="moviesListContainer"
   >
-    Loading... Please wait
-  </h3>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Pulp Fiction
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          2004
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Action & Adventure
+      </div>
+    </div>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Bohemian Rhapsody
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          2003
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Drama, Biography, Music
+      </div>
+    </div>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Kill Bill: Vol 2
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          1994
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Oscar winning Movie
+      </div>
+    </div>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Avengers: War of Infinity
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          2004
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Action & Adventure
+      </div>
+    </div>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Inception
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          2003
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Action & Adventure
+      </div>
+    </div>
+    <div
+      className="movieCardContainer"
+      onMouseLeave={[Function]}
+    >
+      <button
+        className="posterButton"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="threeDotsIcon"
+        disabled=""
+        id=""
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card menu"
+          src="test-file-stub"
+        />
+      </button>
+      <div
+        className="movieTitleReleaseDateContainer"
+      >
+        <div
+          className="movieTitle"
+        >
+          Reservoir dogs
+        </div>
+        <div
+          className="movieReleaseDate"
+        >
+          1994
+        </div>
+      </div>
+      <div
+        className="movieGenres"
+      >
+        Oscar winning Movie
+      </div>
+    </div>
+  </div>
 </main>
 `;

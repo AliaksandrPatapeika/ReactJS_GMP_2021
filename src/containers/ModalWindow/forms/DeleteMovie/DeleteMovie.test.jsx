@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import MovieContext from '../../../../context';
-import {MockMovies} from '../../../../mocks/mockData';
+import {MockMovies} from '../../../../tests/mocks/mockData';
 import DeleteMovie from './DeleteMovie';
 
 describe('DeleteMovie', () => {

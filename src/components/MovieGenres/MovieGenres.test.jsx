@@ -2,7 +2,7 @@ import {head} from 'lodash';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import {MockMovies} from '../../mocks/mockData';
+import {MockMovies} from '../../tests/mocks/mockData';
 import MovieGenres from './MovieGenres';
 
 describe('MovieGenres', () => {

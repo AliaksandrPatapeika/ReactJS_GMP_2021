@@ -1,33 +1,27 @@
 import './Main.less';
 
-import React, {Suspense, useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 
-import NoMoviesFound from '../../components/NoMoviesFound';
-import ResultCount from '../../components/ResultCount';
+import {fetchMovies} from '../../actions/movies';
 import MovieContext from '../../context';
-import {MockResultCount} from '../../mocks/mockData';
-import Menu from '../Menu';
-
-const MoviesList = React.lazy(() => import('../MoviesList'));
+import MainContent from '../MainContent';
+import NoMoviesFound from '../NoMoviesFound';
 
 const Main = () => {
   const {activeModalWindow} = useContext(MovieContext);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
 
   return (
     <>
       {!activeModalWindow && (
       <main className="mainContainer">
-        <Menu />
-        {MockResultCount ? (
-          <>
-            <ResultCount count={MockResultCount} />
-            <Suspense fallback={<h3 className="loading">Loading... Please wait</h3>}>
-              <MoviesList />
-            </Suspense>
-          </>
-        ) : (
-          <NoMoviesFound />
-        )}
+        <MainContent />
+        <NoMoviesFound />
       </main>
       )}
     </>

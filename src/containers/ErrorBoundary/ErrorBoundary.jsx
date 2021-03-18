@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import OopsText from '../../components/OopsText';
 
@@ -20,14 +21,19 @@ class ErrorBoundary extends Component {
 
 	render() {
 	  const {hasError} = this.state;
-	  const {children} = this.props;
+	  const {children, errorMessage} = this.props;
 
-	  return <>{hasError ? <OopsText /> : children}</>;
+	  return <>{hasError || errorMessage ? <OopsText errorMessage={errorMessage} /> : children}</>;
 	}
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  errorMessage: PropTypes.string.isRequired
 };
 
-export default ErrorBoundary;
+const mapStateToProps = (state) => ({
+  errorMessage: state.movie.errorMessage
+});
+
+export default connect(mapStateToProps)(ErrorBoundary);

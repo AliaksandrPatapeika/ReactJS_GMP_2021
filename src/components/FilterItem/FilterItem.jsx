@@ -1,10 +1,10 @@
 import './FilterItem.less';
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useMemo} from 'react';
 
 const FilterItem = ({name, isActive, setActiveFilterId}) => {
-  const className = isActive ? 'filterItem active' : 'filterItem';
+  const className = useMemo(() => (isActive ? 'filterItem active' : 'filterItem'), [isActive]);
 
   return (
     <li role="menuitem" tabIndex="0" className={className} onClick={setActiveFilterId} onKeyPress={setActiveFilterId}>

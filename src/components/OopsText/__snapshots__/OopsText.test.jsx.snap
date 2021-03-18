@@ -4,6 +4,11 @@ exports[`OopsText renders correctly 1`] = `
 <div
   className="oopsTextContainer"
 >
+  <div
+    className="errorMessage"
+  >
+    Error message
+  </div>
   <div>
     Oops, something went wrong...
   </div>

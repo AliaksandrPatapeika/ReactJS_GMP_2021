@@ -4,6 +4,7 @@ import React, {useContext, useEffect} from 'react';
 
 import MovieContext from '../../context';
 import noImage from '../../img/no-image.png';
+import {addDefaultSrc} from '../../utils';
 
 const MovieDetailsContent = () => {
   const {activeMovieDetailsMovie} = useContext(MovieContext);
@@ -18,7 +19,12 @@ const MovieDetailsContent = () => {
 
   return (
     <div className="movieDetailsContentContainer">
-      <img src={poster_path || noImage} alt="movie details poster" className="movieDetailsPoster" />
+      <img
+        src={poster_path || noImage}
+        onError={addDefaultSrc}
+        alt="movie details poster"
+        className="movieDetailsPoster"
+      />
       <div className="movieDetailsContent">
         <div className="movieDetailsTitleRating">
           <span className="movieDetailsTitle">{title}</span>

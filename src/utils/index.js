@@ -1,3 +1,1 @@
-import getGenres from './utils';
-
-export default getGenres;
+export * from './utils.js';

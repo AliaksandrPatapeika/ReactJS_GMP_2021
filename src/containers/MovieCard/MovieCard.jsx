@@ -10,6 +10,7 @@ import MovieTitle from '../../components/MovieTitle';
 import MovieContext from '../../context';
 import threeDotsIconLink from '../../img/moreButton.svg';
 import noImage from '../../img/no-image.png';
+import {addDefaultSrc} from '../../utils';
 import MovieCardMenu from '../MovieCardMenu';
 
 const MovieCard = ({
@@ -47,7 +48,12 @@ const MovieCard = ({
       onMouseLeave={closeMovieCardSubMenu}
     >
       <Button className="posterButton" onClick={showMovieDetailsWindow}>
-        <img src={poster_path || noImage} alt="poster" className="poster" />
+        <img
+          src={poster_path || noImage}
+          onError={addDefaultSrc}
+          alt="movie card poster"
+          className="movieCardPoster"
+        />
       </Button>
       <Button className="threeDotsIcon" onClick={showMovieCardSubMenu}>
         <img src={threeDotsIconLink} alt="movie card menu" />

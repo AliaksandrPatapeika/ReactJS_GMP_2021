@@ -7,7 +7,7 @@ import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import {Genres} from '../../../../constants';
 import MovieContext from '../../../../context';
-import {MockOnClick} from '../../../../mocks/mockData';
+import {MockOnClick} from '../../../../tests/mocks/mockData';
 
 const AddMovie = ({formTitle}) => {
   const [optionSelected, setOptionSelected] = useState(null);
