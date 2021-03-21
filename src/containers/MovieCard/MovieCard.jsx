@@ -1,13 +1,14 @@
 import './MovieCard.less';
 
 import PropTypes from 'prop-types';
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 
+import {showModal, showMovieDetails} from '../../actions/movies';
 import Button from '../../components/Button';
 import MovieGenres from '../../components/MovieGenres';
 import MovieReleaseDate from '../../components/MovieReleaseDate';
 import MovieTitle from '../../components/MovieTitle';
-import MovieContext from '../../context';
 import threeDotsIconLink from '../../img/moreButton.svg';
 import noImage from '../../img/no-image.png';
 import {addDefaultSrc} from '../../utils';
@@ -20,10 +21,10 @@ const MovieCard = ({
   }
 }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
-  const {showModalWindow, showMovieDetails} = useContext(MovieContext);
+  const dispatch = useDispatch();
 
   const showMovieDetailsWindow = () => {
-    showMovieDetails(movie);
+    dispatch(showMovieDetails(movie));
   };
 
   const showMovieCardSubMenu = () => {
@@ -35,11 +36,11 @@ const MovieCard = ({
   };
 
   const showEditMovieWindow = () => {
-    showModalWindow('editMovie', movie);
+    dispatch(showModal('editMovie', movie));
   };
 
   const showDeleteMovieWindow = () => {
-    showModalWindow('deleteMovie', movie);
+    dispatch(showModal('deleteMovie', movie));
   };
 
   return (

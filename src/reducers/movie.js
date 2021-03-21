@@ -4,7 +4,11 @@ const initialState = {
   isLoading: false,
   movies: [],
   totalAmount: null,
-  errorMessage: ''
+  errorMessage: '',
+  activeMovieDetails: false,
+  activeMovieDetailsMovie: null,
+  activeModalWindow: false,
+  activeModalMovie: null
 };
 
 const movie = (state = initialState, action) => {
@@ -25,6 +29,30 @@ const movie = (state = initialState, action) => {
       return {
         ...state,
         errorMessage: action.payload.message
+      };
+    case actions.SHOW_MOVIE_DETAILS:
+      return {
+        ...state,
+        activeMovieDetails: true,
+        activeMovieDetailsMovie: action.payload
+      };
+    case actions.CLOSE_MOVIE_DETAILS:
+      return {
+        ...state,
+        activeMovieDetails: false,
+        activeMovieDetailsMovie: null
+      };
+    case actions.SHOW_MODAL_WINDOW:
+      return {
+        ...state,
+        activeModalWindow: action.payload.activeModalWindow,
+        activeModalMovie: action.payload.activeModalMovie
+      };
+    case actions.CLOSE_MODAL_WINDOW:
+      return {
+        ...state,
+        activeModalWindow: false,
+        activeModalMovie: null
       };
     default:
       return state;

@@ -1,14 +1,14 @@
 import '../../ModalWindow.less';
 
 import PropTypes from 'prop-types';
-import React, {useContext} from 'react';
+import React from 'react';
+import {useSelector} from 'react-redux';
 
 import Button from '../../../../components/Button';
-import MovieContext from '../../../../context';
 import {MockOnClick} from '../../../../tests/mocks/mockData';
 
 const DeleteMovie = ({formTitle, movie}) => {
-  const {activeModalWindow} = useContext(MovieContext);
+  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
 
   return (
     <>

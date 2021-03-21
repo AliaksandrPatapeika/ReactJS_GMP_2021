@@ -1,14 +1,14 @@
 import './MovieDetails.less';
 
-import React, {useContext} from 'react';
+import React from 'react';
+import {useSelector} from 'react-redux';
 
 import Blur from '../../components/Blur';
 import MovieDetailsContent from '../../components/MovieDetailsContent';
-import MovieContext from '../../context';
 import HeaderTop from '../HeaderTop/HeaderTop';
 
 const MovieDetails = () => {
-  const {activeMovieDetails} = useContext(MovieContext);
+  const activeMovieDetails = useSelector((state) => state.movie.activeMovieDetails);
 
   return (
     <>

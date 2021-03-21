@@ -32,3 +32,21 @@ export const fetchMovies = () => async (dispatch) => {
     dispatch(fetchMoviesError(error));
   }
 };
+
+export const showMovieDetails = (movie) => ({
+  type: actions.SHOW_MOVIE_DETAILS,
+  payload: movie
+});
+
+export const closeMovieDetails = () => ({
+  type: actions.CLOSE_MOVIE_DETAILS
+});
+
+export const showModal = (activeModalWindow, activeModalMovie) => ({
+  type: actions.SHOW_MODAL_WINDOW,
+  payload: {activeModalWindow, activeModalMovie}
+});
+
+export const closeModal = () => ({
+  type: actions.CLOSE_MODAL_WINDOW
+});

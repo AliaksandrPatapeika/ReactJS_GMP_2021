@@ -1,25 +1,32 @@
 import './ModalWindow.less';
 
-import React, {useCallback, useContext, useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
+import {closeModal} from '../../actions/movies';
 import Blur from '../../components/Blur';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import MovieContext from '../../context';
 import AddMovie from './forms/AddMovie';
 import DeleteMovie from './forms/DeleteMovie';
 import EditMovie from './forms/EditMovie';
 
 const ModalWindow = () => {
-  const {activeModalWindow, activeModalMovie, closeModalWindow} = useContext(MovieContext);
+  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
+  const activeModalMovie = useSelector((state) => state.movie.activeModalMovie);
+  const dispatch = useDispatch();
+
+  const closeModalWindow = () => {
+    dispatch(closeModal());
+  };
 
   const handleKeyDown = useCallback(
     (event) => {
       if (event.key === 'Escape') {
-        closeModalWindow();
+        dispatch(closeModal());
       }
     },
-    [closeModalWindow]
+    [dispatch]
   );
 
   useEffect(() => {
@@ -39,7 +46,11 @@ const ModalWindow = () => {
         <Blur>
           <Logo />
           <div className="modalWindow">
-            <Button id="modalWindowCloseButton" className="closeButton" onClick={closeModalWindow}>
+            <Button
+              id="modalWindowCloseButton"
+              className="closeButton"
+              onClick={closeModalWindow}
+            >
               <i className="fa fa-times" aria-hidden="true" />
             </Button>
             <div className="modalBody">

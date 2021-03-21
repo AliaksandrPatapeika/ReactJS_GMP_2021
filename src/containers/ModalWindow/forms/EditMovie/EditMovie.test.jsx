@@ -1,22 +1,27 @@
 import {head} from 'lodash';
 import React from 'react';
+import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
+import configureMockStore from 'redux-mock-store';
 
-import MovieContext from '../../../../context';
 import {MockMovies} from '../../../../tests/mocks/mockData';
 import EditMovie from './EditMovie';
 
 describe('EditMovie', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
+    const mockStore = configureMockStore();
+    const initialState = {
+      movie: {
+        activeModalWindow: 'editMovie'
+      }
+    };
+    const store = mockStore(initialState);
     const editMovie = renderer
       .create(
-        <MovieContext.Provider value={{
-				  activeModalWindow: 'editMovie'
-        }}
-        >
+        <Provider store={store}>
           <EditMovie formTitle="title" movie={mockMovie} />
-        </MovieContext.Provider>
+        </Provider>
       )
       .toJSON();
 

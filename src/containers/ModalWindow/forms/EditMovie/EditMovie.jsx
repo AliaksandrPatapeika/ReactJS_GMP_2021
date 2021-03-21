@@ -1,12 +1,12 @@
 import '../../ModalWindow.less';
 
 import PropTypes from 'prop-types';
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 
 import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import {Genres} from '../../../../constants';
-import MovieContext from '../../../../context';
 import {MockOnClick} from '../../../../tests/mocks/mockData';
 import {getGenres} from '../../../../utils';
 
@@ -26,7 +26,7 @@ const EditMovie = ({
     setOptionSelected(getGenres(Genres, genres));
   };
 
-  const {activeModalWindow} = useContext(MovieContext);
+  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
 
   return (
     <>

@@ -1,15 +1,14 @@
 import './Main.less';
 
-import React, {useContext, useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 import {fetchMovies} from '../../actions/movies';
-import MovieContext from '../../context';
 import MainContent from '../MainContent';
 import NoMoviesFound from '../NoMoviesFound';
 
 const Main = () => {
-  const {activeModalWindow} = useContext(MovieContext);
+  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const dispatch = useDispatch();
 
   useEffect(() => {

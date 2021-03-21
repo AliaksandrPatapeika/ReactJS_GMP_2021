@@ -1,13 +1,13 @@
 import './MovieDetailsContent.less';
 
-import React, {useContext, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {useSelector} from 'react-redux';
 
-import MovieContext from '../../context';
 import noImage from '../../img/no-image.png';
 import {addDefaultSrc} from '../../utils';
 
 const MovieDetailsContent = () => {
-  const {activeMovieDetailsMovie} = useContext(MovieContext);
+  const activeMovieDetailsMovie = useSelector((state) => state.movie.activeMovieDetailsMovie);
 
   useEffect(() => {
     window.scrollTo(0, 0);

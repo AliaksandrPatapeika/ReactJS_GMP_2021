@@ -1,31 +1,35 @@
 import './HeaderTop.less';
 
-import React, {useContext, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
+import {closeMovieDetails, showModal} from '../../actions/movies';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import MovieContext from '../../context';
 
 const HeaderTop = () => {
-  const {
-    showModalWindow, activeMovieDetails, activeMovieDetailsMovie, closeMovieDetails
-  } = useContext(MovieContext);
+  const activeMovieDetails = useSelector((state) => state.movie.activeMovieDetails);
+  const dispatch = useDispatch();
+
+  const closeMovieDetailsWindow = () => {
+    dispatch(closeMovieDetails());
+  };
+
+  const showAddMovieWindow = () => {
+    dispatch(showModal('addMovie'));
+  };
 
   useEffect(() => {
     if (activeMovieDetails) {
       document.getElementById('returnToMainButton').focus();
     }
-  }, [activeMovieDetails, activeMovieDetailsMovie]);
-
-  const showAddMovieWindow = () => {
-    showModalWindow('addMovie');
-  };
+  }, [activeMovieDetails]);
 
   return (
     <div className="headerTopContainer">
       <Logo />
       {activeMovieDetails ? (
-        <Button id="returnToMainButton" className="returnToMainButton" onClick={closeMovieDetails}>
+        <Button id="returnToMainButton" className="returnToMainButton" onClick={closeMovieDetailsWindow}>
           <i className="fa fa-search fa-flip-horizontal" aria-hidden="true" />
         </Button>
       ) : (
