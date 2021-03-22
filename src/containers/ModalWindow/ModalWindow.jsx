@@ -55,8 +55,12 @@ const ModalWindow = () => {
             </Button>
             <div className="modalBody">
               <AddMovie formTitle="ADD MOVIE" />
-              <EditMovie formTitle="EDIT MOVIE" movie={activeModalMovie} />
-              <DeleteMovie formTitle="DELETE MOVIE" movie={activeModalMovie} />
+              {activeModalMovie && (
+                <>
+                  <EditMovie formTitle="EDIT MOVIE" movie={activeModalMovie} />
+                  <DeleteMovie formTitle="DELETE MOVIE" movieId={activeModalMovie.id} />
+                </>
+              )}
             </div>
           </div>
         </Blur>

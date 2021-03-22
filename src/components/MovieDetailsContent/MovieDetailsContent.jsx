@@ -3,7 +3,7 @@ import './MovieDetailsContent.less';
 import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
-import noImage from '../../img/no-image.png';
+import noImage from '../../img/noImage.png';
 import {addDefaultSrc} from '../../utils';
 
 const MovieDetailsContent = () => {

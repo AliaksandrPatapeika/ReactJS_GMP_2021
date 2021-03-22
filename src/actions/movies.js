@@ -7,8 +7,8 @@ import * as actions from './actionTypes';
 
 const url = 'http://localhost:4000/movies';
 
-export const fetchMoviesRequest = () => ({
-  type: actions.FETCH_MOVIES_REQUEST
+export const startAsyncRequest = () => ({
+  type: actions.START_ASYNC_REQUEST
 });
 
 export const fetchMoviesSuccess = (movies) => ({
@@ -16,20 +16,44 @@ export const fetchMoviesSuccess = (movies) => ({
   payload: movies
 });
 
-export const fetchMoviesError = (error) => ({
-  type: actions.FETCH_MOVIES_ERROR,
+export const catchError = (error) => ({
+  type: actions.CATCH_ERROR,
   payload: error
 });
 
 export const fetchMovies = () => async (dispatch) => {
   try {
-    dispatch(fetchMoviesRequest());
+    dispatch(startAsyncRequest());
     await sleep(2000);
     const {data} = await axios.get(`${url}?limit=6`);
 
     dispatch(fetchMoviesSuccess(data));
   } catch (error) {
-    dispatch(fetchMoviesError(error));
+    dispatch(catchError(error.message));
+  }
+};
+
+export const addMovie = (movie) => async (dispatch) => {
+  try {
+    await axios.post(url, movie);
+  } catch (error) {
+    dispatch(catchError(error.message));
+  }
+};
+
+export const editMovie = (movie) => async (dispatch) => {
+  try {
+    await axios.put(url, movie);
+  } catch (error) {
+    dispatch(catchError(error.message));
+  }
+};
+
+export const deleteMovie = (movieId) => async (dispatch) => {
+  try {
+    await axios.delete(`${url}/${movieId}`);
+  } catch (error) {
+    dispatch(catchError(error.message));
   }
 };
 
@@ -43,10 +67,10 @@ export const closeMovieDetails = () => ({
 });
 
 export const showModal = (activeModalWindow, activeModalMovie) => ({
-  type: actions.SHOW_MODAL_WINDOW,
+  type: actions.SHOW_MODAL,
   payload: {activeModalWindow, activeModalMovie}
 });
 
 export const closeModal = () => ({
-  type: actions.CLOSE_MODAL_WINDOW
+  type: actions.CLOSE_MODAL
 });

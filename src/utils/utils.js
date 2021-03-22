@@ -1,6 +1,6 @@
-import {filter, includes} from 'lodash';
+import {filter, includes, map} from 'lodash';
 
-import noImage from '../img/no-image.png';
+import noImage from '../img/noImage.png';
 
 export const getGenres = (Genres, movieGenres) => filter(
   Genres, ({label}) => includes(movieGenres, label)
@@ -14,3 +14,13 @@ export const addDefaultSrc = (event) => {
 
 /* delay emulating a slow connection speed for spinner testing */
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const convertMovieData = (movieData) => ({
+  poster_path: movieData.poster_path ? movieData.poster_path : noImage,
+  genres: map(movieData.genres, (movie) => movie.label),
+  budget: Number(movieData.budget),
+  revenue: Number(movieData.revenue),
+  runtime: Number(movieData.runtime),
+  vote_average: Number(movieData.vote_average),
+  vote_count: Number(movieData.vote_count)
+});

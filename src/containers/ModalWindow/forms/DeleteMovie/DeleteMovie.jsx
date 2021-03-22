@@ -2,20 +2,25 @@ import '../../ModalWindow.less';
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
+import {deleteMovie} from '../../../../actions/movies';
 import Button from '../../../../components/Button';
-import {MockOnClick} from '../../../../tests/mocks/mockData';
 
-const DeleteMovie = ({formTitle, movie}) => {
+const DeleteMovie = ({formTitle, movieId}) => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
+  const dispatch = useDispatch();
+
+  const onSubmitHandler = () => {
+    dispatch(deleteMovie(movieId));
+  };
 
   return (
     <>
       {activeModalWindow === 'deleteMovie' && (
       <>
         <span className="title">{formTitle}</span>
-        <form onSubmit={() => MockOnClick('form Delete movie onSubmit movie.id', movie.id)}>
+        <form onSubmit={onSubmitHandler}>
           <div className="formInput">
             <h1 className="content">Are you sure you want to delete this movie?</h1>
           </div>
@@ -35,24 +40,7 @@ const DeleteMovie = ({formTitle, movie}) => {
 
 DeleteMovie.propTypes = {
   formTitle: PropTypes.string.isRequired,
-  movie: PropTypes.shape({
-    budget: PropTypes.number,
-    genres: PropTypes.arrayOf(PropTypes.string),
-    id: PropTypes.number,
-    overview: PropTypes.string,
-    poster_path: PropTypes.string,
-    release_date: PropTypes.string,
-    revenue: PropTypes.number,
-    runtime: PropTypes.number,
-    tagline: PropTypes.string,
-    title: PropTypes.string,
-    vote_average: PropTypes.number,
-    vote_count: PropTypes.number
-  })
-};
-
-DeleteMovie.defaultProps = {
-  movie: null
+  movieId: PropTypes.number.isRequired
 };
 
 export default DeleteMovie;

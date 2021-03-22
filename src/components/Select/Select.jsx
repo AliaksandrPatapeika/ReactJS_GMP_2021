@@ -6,6 +6,7 @@ import ClearIndicator from './components/ClearIndicator';
 import DropdownIndicator from './components/DropdownIndicator';
 import MultiValue from './components/MultiValue';
 import Option from './components/Option';
+import RequiredSelect from './components/RequiredSelect';
 import ValueContainer from './components/ValueContainer';
 
 /* https://github.com/JedWatson/react-select/issues/3543#issuecomment-565733597 */
@@ -14,8 +15,9 @@ const Select = (props) => {
 
   if (isMulti && allowSelectAll) {
     return (
-      <ReactSelect
+      <RequiredSelect
         {...props}
+        SelectComponent={ReactSelect}
         options={[props.allOption, ...props.options]}
         components={{
 				  ClearIndicator,

@@ -39,6 +39,14 @@
 				color: @red;
 				font-size: 17px;
 				font-family: @NetflixSans-Regular;
+
+				&.required-label:after {
+					content: @required-label-indicator;
+					position: absolute;
+					margin-left: 3px;
+					color: @required-label-color;
+					font-size: 20px;
+				}
 			}
 
 			.modalFooter {

@@ -33,7 +33,7 @@ Array [
       className="formInput"
     >
       <label
-        className="label"
+        className="label required-label"
         htmlFor="title"
       >
         TITLE
@@ -44,7 +44,9 @@ Array [
         defaultValue="Pulp Fiction"
         id="title"
         name="title"
+        onChange={[Function]}
         placeholder="Title here"
+        required={true}
         type="text"
       />
     </div>
@@ -52,16 +54,17 @@ Array [
       className="formInput"
     >
       <label
-        className="label"
-        htmlFor="releaseDate"
+        className="label required-label"
+        htmlFor="release_date"
       >
         RELEASE DATE
       </label>
       <input
         className="input"
         defaultValue="2004-03-15"
-        id="releaseDate"
-        name="releaseDate"
+        id="release_date"
+        name="release_date"
+        onChange={[Function]}
         placeholder="Select Date"
         required={true}
         type="date"
@@ -72,7 +75,7 @@ Array [
     >
       <label
         className="label"
-        htmlFor="movieURL"
+        htmlFor="poster_path"
       >
         MOVIE URL
       </label>
@@ -80,129 +83,149 @@ Array [
         autoComplete="off"
         className="input"
         defaultValue="test-file-stub"
-        id="movieURL"
-        name="movieURL"
+        id="poster_path"
+        name="poster_path"
+        onChange={[Function]}
         placeholder="Movie URL here"
-        type="text"
+        type="url"
       />
     </div>
     <div
       className="formInput"
     >
       <label
-        className="label"
+        className="label required-label"
         htmlFor="genres"
       >
         GENRE
       </label>
       <div
-        className="select css-2b097c-container"
-        id="genres"
-        onKeyDown={[Function]}
+        className="requiredSelectContainer"
       >
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          className="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          className="select__control css-yk16xz-control"
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
+          className="select css-2b097c-container"
+          id="genres"
+          onKeyDown={[Function]}
         >
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            className="css-1f43avz-a11yText-A11yText"
+          />
           <div
-            className="select__value-container select__value-container--is-multi css-g1d714-ValueContainer"
+            className="select__control css-yk16xz-control"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
           >
             <div
-              className="select__placeholder css-1wa3eu0-placeholder"
-            >
-              Select Genre
-            </div>
-            <div
-              className="css-b8ldur-Input"
+              className="select__value-container select__value-container--is-multi css-g1d714-ValueContainer"
             >
               <div
-                className="select__input"
-                style={
-                  Object {
-                    "display": "inline-block",
-                  }
-                }
+                className="select__placeholder css-1wa3eu0-placeholder"
               >
-                <input
-                  aria-autocomplete="list"
-                  autoCapitalize="none"
-                  autoComplete="off"
-                  autoCorrect="off"
-                  disabled={false}
-                  id="react-select-2-input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  spellCheck="false"
-                  style={
-                    Object {
-                      "background": 0,
-                      "border": 0,
-                      "boxSizing": "content-box",
-                      "color": "inherit",
-                      "fontSize": "inherit",
-                      "label": "input",
-                      "opacity": 1,
-                      "outline": 0,
-                      "padding": 0,
-                      "width": "1px",
-                    }
-                  }
-                  tabIndex="0"
-                  type="text"
-                  value=""
-                />
+                Select Genre
+              </div>
+              <div
+                className="css-b8ldur-Input"
+              >
                 <div
+                  className="select__input"
                   style={
                     Object {
-                      "height": 0,
-                      "left": 0,
-                      "overflow": "scroll",
-                      "position": "absolute",
-                      "top": 0,
-                      "visibility": "hidden",
-                      "whiteSpace": "pre",
+                      "display": "inline-block",
                     }
                   }
                 >
-                  
+                  <input
+                    aria-autocomplete="list"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    disabled={false}
+                    id="react-select-2-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "label": "input",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="select__indicators css-1hb7zxy-IndicatorsContainer"
-          >
-            <span
-              className="select__indicator-separator css-1okebmr-indicatorSeparator"
-            />
             <div
-              aria-hidden="true"
-              className="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
+              className="select__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-caret-down"
+              <span
+                className="select__indicator-separator css-1okebmr-indicatorSeparator"
               />
+              <div
+                aria-hidden="true"
+                className="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="fa fa-caret-down"
+                />
+              </div>
             </div>
           </div>
         </div>
+        <input
+          autoComplete="off"
+          onChange={[Function]}
+          required={true}
+          style={
+            Object {
+              "height": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+          tabIndex={-1}
+          value={Array []}
+        />
       </div>
     </div>
     <div
       className="formInput"
     >
       <label
-        className="label"
+        className="label required-label"
         htmlFor="overview"
       >
         OVERVIEW
@@ -213,7 +236,9 @@ Array [
         defaultValue="Pulp Fiction is a 1994 American neo-noir black comedy crime film written and directed by Quentin Tarantino, who conceived it with Roger Avary.[4] Starring John Travolta, Samuel L. Jackson, Bruce Willis, Tim Roth, Ving Rhames, and Uma Thurman, it tells several stories of criminal Los Angeles. The title refers to the pulp magazines and hardboiled crime novels popular during the mid-20th century, known for their graphic violence and punchy dialogue."
         id="overview"
         name="overview"
+        onChange={[Function]}
         placeholder="Overview here"
+        required={true}
         type="text"
       />
     </div>
@@ -232,8 +257,111 @@ Array [
         defaultValue={154}
         id="runtime"
         name="runtime"
+        onChange={[Function]}
         placeholder="Runtime here"
+        type="number"
+      />
+    </div>
+    <div
+      className="formInput"
+    >
+      <label
+        className="label"
+        htmlFor="budget"
+      >
+        BUDGET
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        defaultValue={55000000}
+        id="budget"
+        name="budget"
+        onChange={[Function]}
+        placeholder="Budget here"
+        type="number"
+      />
+    </div>
+    <div
+      className="formInput"
+    >
+      <label
+        className="label"
+        htmlFor="revenue"
+      >
+        REVENUE
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        defaultValue={136906000}
+        id="revenue"
+        name="revenue"
+        onChange={[Function]}
+        placeholder="Revenue here"
+        type="number"
+      />
+    </div>
+    <div
+      className="formInput"
+    >
+      <label
+        className="label required-label"
+        htmlFor="tagline"
+      >
+        TAGLINE
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        defaultValue="Mock tagline!"
+        id="tagline"
+        name="tagline"
+        onChange={[Function]}
+        placeholder="Tagline here"
+        required={true}
         type="text"
+      />
+    </div>
+    <div
+      className="formInput"
+    >
+      <label
+        className="label"
+        htmlFor="vote_average"
+      >
+        VOTE AVERAGE
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        defaultValue={4.3}
+        id="vote_average"
+        name="vote_average"
+        onChange={[Function]}
+        placeholder="Vote average here"
+        step="0.1"
+        type="number"
+      />
+    </div>
+    <div
+      className="formInput"
+    >
+      <label
+        className="label"
+        htmlFor="vote_count"
+      >
+        VOTE COUNT
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        defaultValue={1195}
+        id="vote_count"
+        name="vote_count"
+        onChange={[Function]}
+        placeholder="Vote count here"
+        type="number"
       />
     </div>
     <div

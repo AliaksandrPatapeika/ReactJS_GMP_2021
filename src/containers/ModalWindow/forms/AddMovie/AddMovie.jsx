@@ -2,34 +2,57 @@ import '../../ModalWindow.less';
 
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
+import {addMovie} from '../../../../actions/movies';
 import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import {Genres} from '../../../../constants';
-import {MockOnClick} from '../../../../tests/mocks/mockData';
+import noImage from '../../../../img/noImage.png';
+import {convertMovieData} from '../../../../utils';
 
 const AddMovie = ({formTitle}) => {
-  const [optionSelected, setOptionSelected] = useState(null);
+  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
+  const dispatch = useDispatch();
+  const [movieData, setMovieData] = useState({
+    poster_path: noImage,
+    genres: [],
+    budget: 0,
+    revenue: 0,
+    runtime: 0,
+    vote_average: 0,
+    vote_count: 0
+  });
 
   const selectChange = (selected) => {
-    setOptionSelected(selected);
+    setMovieData({...movieData, genres: selected});
   };
 
   const selectReset = () => {
-    setOptionSelected(null);
+    setMovieData({...movieData, genres: null});
   };
 
-  const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
+  const onInputChangeHandler = (event) => {
+    setMovieData({...movieData, [event.target.name]: event.target.value});
+  };
+
+  const onSubmitHandler = () => {
+    const payload = {
+      ...movieData,
+      ...convertMovieData(movieData)
+    };
+
+    dispatch(addMovie(payload));
+  };
 
   return (
     <>
       {activeModalWindow === 'addMovie' && (
       <>
         <span className="title">{formTitle}</span>
-        <form onSubmit={() => MockOnClick('form Add movie onSubmit')} onReset={selectReset}>
+        <form onSubmit={onSubmitHandler} onReset={selectReset}>
           <div className="formInput">
-            <label htmlFor="title" className="label">
+            <label htmlFor="title" className="label required-label">
               TITLE
             </label>
             <input
@@ -38,38 +61,41 @@ const AddMovie = ({formTitle}) => {
               id="title"
               className="input"
               placeholder="Title here"
-              defaultValue="Moana"
+              onChange={onInputChangeHandler}
               autoComplete="off"
-            />
-          </div>
-          <div className="formInput">
-            <label htmlFor="releaseDate" className="label">
-              RELEASE DATE
-            </label>
-            <input
-              type="date"
-              name="releaseDate"
-              id="releaseDate"
-              className="input"
-              placeholder="Select Date"
               required
             />
           </div>
           <div className="formInput">
-            <label htmlFor="movieURL" className="label">
+            <label htmlFor="release_date" className="label required-label">
+              RELEASE DATE
+            </label>
+            <input
+              type="date"
+              name="release_date"
+              id="release_date"
+              className="input"
+              placeholder="Select Date"
+              onChange={onInputChangeHandler}
+              required
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="poster_path" className="label">
               MOVIE URL
             </label>
             <input
-              type="text"
-              name="movieURL"
-              id="movieURL"
+              type="url"
+              name="poster_path"
+              id="poster_path"
               className="input"
               placeholder="Movie URL here"
+              onChange={onInputChangeHandler}
               autoComplete="off"
             />
           </div>
           <div className="formInput">
-            <label htmlFor="genres" className="label">
+            <label htmlFor="genres" className="label required-label">
               GENRE
             </label>
             <Select
@@ -84,11 +110,12 @@ const AddMovie = ({formTitle}) => {
               onChange={selectChange}
               allowSelectAll
               allSelectedLabel="All genres"
-              value={optionSelected}
+              value={movieData.genres}
+              required
             />
           </div>
           <div className="formInput">
-            <label htmlFor="overview" className="label">
+            <label htmlFor="overview" className="label required-label">
               OVERVIEW
             </label>
             <input
@@ -97,7 +124,9 @@ const AddMovie = ({formTitle}) => {
               id="overview"
               className="input"
               placeholder="Overview here"
+              onChange={onInputChangeHandler}
               autoComplete="off"
+              required
             />
           </div>
           <div className="formInput">
@@ -105,11 +134,84 @@ const AddMovie = ({formTitle}) => {
               RUNTIME
             </label>
             <input
-              type="text"
+              type="number"
               name="runtime"
               id="runtime"
               className="input"
               placeholder="Runtime here"
+              onChange={onInputChangeHandler}
+              autoComplete="off"
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="budget" className="label">
+              BUDGET
+            </label>
+            <input
+              type="number"
+              name="budget"
+              id="budget"
+              className="input"
+              placeholder="Budget here"
+              onChange={onInputChangeHandler}
+              autoComplete="off"
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="revenue" className="label">
+              REVENUE
+            </label>
+            <input
+              type="number"
+              name="revenue"
+              id="revenue"
+              className="input"
+              placeholder="Revenue here"
+              onChange={onInputChangeHandler}
+              autoComplete="off"
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="tagline" className="label required-label">
+              TAGLINE
+            </label>
+            <input
+              type="text"
+              name="tagline"
+              id="tagline"
+              className="input"
+              placeholder="Tagline here"
+              onChange={onInputChangeHandler}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="vote_average" className="label">
+              VOTE AVERAGE
+            </label>
+            <input
+              type="number"
+              step="0.1"
+              name="vote_average"
+              id="vote_average"
+              className="input"
+              placeholder="Vote average here"
+              onChange={onInputChangeHandler}
+              autoComplete="off"
+            />
+          </div>
+          <div className="formInput">
+            <label htmlFor="vote_count" className="label">
+              VOTE COUNT
+            </label>
+            <input
+              type="number"
+              name="vote_count"
+              id="vote_count"
+              className="input"
+              placeholder="Vote count here"
+              onChange={onInputChangeHandler}
               autoComplete="off"
             />
           </div>

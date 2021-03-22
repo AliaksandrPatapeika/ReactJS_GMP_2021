@@ -13,7 +13,7 @@ const initialState = {
 
 const movie = (state = initialState, action) => {
   switch (action.type) {
-    case actions.FETCH_MOVIES_REQUEST:
+    case actions.START_ASYNC_REQUEST:
       return {
         ...state,
         isLoading: true
@@ -25,10 +25,10 @@ const movie = (state = initialState, action) => {
         movies: action.payload.data,
         totalAmount: action.payload.totalAmount
       };
-    case actions.FETCH_MOVIES_ERROR:
+    case actions.CATCH_ERROR:
       return {
         ...state,
-        errorMessage: action.payload.message
+        errorMessage: action.payload
       };
     case actions.SHOW_MOVIE_DETAILS:
       return {
@@ -42,13 +42,13 @@ const movie = (state = initialState, action) => {
         activeMovieDetails: false,
         activeMovieDetailsMovie: null
       };
-    case actions.SHOW_MODAL_WINDOW:
+    case actions.SHOW_MODAL:
       return {
         ...state,
         activeModalWindow: action.payload.activeModalWindow,
         activeModalMovie: action.payload.activeModalMovie
       };
-    case actions.CLOSE_MODAL_WINDOW:
+    case actions.CLOSE_MODAL:
       return {
         ...state,
         activeModalWindow: false,

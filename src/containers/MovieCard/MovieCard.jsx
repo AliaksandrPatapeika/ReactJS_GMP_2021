@@ -10,7 +10,7 @@ import MovieGenres from '../../components/MovieGenres';
 import MovieReleaseDate from '../../components/MovieReleaseDate';
 import MovieTitle from '../../components/MovieTitle';
 import threeDotsIconLink from '../../img/moreButton.svg';
-import noImage from '../../img/no-image.png';
+import noImage from '../../img/noImage.png';
 import {addDefaultSrc} from '../../utils';
 import MovieCardMenu from '../MovieCardMenu';
 

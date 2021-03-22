@@ -20,7 +20,7 @@ describe('DeleteMovie', () => {
     const deleteMovie = renderer
       .create(
         <Provider store={store}>
-          <DeleteMovie formTitle="title" movie={mockMovie} />
+          <DeleteMovie formTitle="title" movieId={mockMovie.id} />
         </Provider>
       )
       .toJSON();
