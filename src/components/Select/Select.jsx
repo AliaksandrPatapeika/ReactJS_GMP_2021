@@ -1,3 +1,4 @@
+import {filter, includes} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactSelect from 'react-select';
@@ -34,10 +35,8 @@ const Select = (props) => {
 				    let result = [];
 
 				    if (selected.length === props.options.length) {
-				      if (selected.includes(props.allOption)) {
-				        result = selected.filter(
-				          (option) => option.value !== props.allOption.value
-				        );
+				      if (includes(selected, props.allOption)) {
+				        result = filter(selected, (option) => option.value !== props.allOption.value);
 				      } else if (event.action === 'select-option') {
 				        result = [props.allOption, ...props.options];
 				      }

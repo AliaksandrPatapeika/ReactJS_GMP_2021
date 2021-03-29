@@ -3,6 +3,7 @@
 exports[`MovieReleaseDate renders correctly 1`] = `
 <div
   className="movieReleaseDate"
+  title="Release date: 2004-03-15"
 >
   2004
 </div>

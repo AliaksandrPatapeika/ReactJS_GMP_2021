@@ -1,22 +1,19 @@
 import './ResultsFilter.less';
 
-import React, {useState} from 'react';
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
+import {setActiveFilter} from '../../actions/movies';
 import FilterItem from '../../components/FilterItem';
 import {FilterItems} from '../../constants';
 
 const ResultsFilter = () => {
-  const genres = {
-    filterItems: FilterItems
-  };
+  const genres = {filterItems: FilterItems};
+  const activeFilter = useSelector((state) => state.query.activeFilter);
+  const dispatch = useDispatch();
 
-  const [activeFilterId, setActiveFilterId] = useState(1);
-
-  // eslint-disable-next-line no-unused-vars
-  const setActiveFilter = (id, genre) => {
-    setActiveFilterId(id);
-
-    // TODO with Redux dispatch(filterByGenre(genre));
+  const setActiveFilterHandler = (id, genre) => {
+    dispatch(setActiveFilter(genre));
   };
 
   return (
@@ -26,8 +23,8 @@ const ResultsFilter = () => {
           <FilterItem
             name={item.name}
             key={item.id}
-            isActive={item.id === activeFilterId}
-            setActiveFilterId={() => setActiveFilter(item.id, item.name)}
+            isActive={item.name === activeFilter}
+            setActiveFilter={() => setActiveFilterHandler(item.id, item.name)}
           />
         ))}
       </ul>

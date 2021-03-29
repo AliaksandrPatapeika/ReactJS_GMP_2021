@@ -241,6 +241,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 2004-03-15"
         >
           2004
         </div>
@@ -293,6 +294,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 2003-05-23"
         >
           2003
         </div>
@@ -345,6 +347,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 1994-01-08"
         >
           1994
         </div>
@@ -397,6 +400,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 2004-07-21"
         >
           2004
         </div>
@@ -449,6 +453,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 2003-05-02"
         >
           2003
         </div>
@@ -501,6 +506,7 @@ exports[`Main renders correctly 1`] = `
         </div>
         <div
           className="movieReleaseDate"
+          title="Release date: 1994-11-30"
         >
           1994
         </div>

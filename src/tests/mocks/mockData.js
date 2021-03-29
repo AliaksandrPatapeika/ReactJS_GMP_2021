@@ -5,7 +5,7 @@ import image04 from '../../img/posters/04-avengers-infinity-war.jpg';
 import image05 from '../../img/posters/05-inception.jpg';
 import image06 from '../../img/posters/06-reservoir-dogs.jpg';
 
-export const MockMovies = [
+const MockMovies = [
   {
     budget: 55000000,
     genres: ['Action & Adventure'],
@@ -92,5 +92,4 @@ export const MockMovies = [
   }
 ];
 
-// eslint-disable-next-line no-console
-export const MockOnClick = (button, attrs) => console.log(`Clicked from "${button}"`, attrs);
+export default MockMovies;

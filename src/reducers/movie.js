@@ -1,22 +1,34 @@
 import * as actions from '../actions/actionTypes';
 
 const initialState = {
-  isLoading: false,
-  movies: [],
-  totalAmount: null,
-  errorMessage: '',
+  activeModalMovie: null,
+  activeModalWindow: false,
   activeMovieDetails: false,
   activeMovieDetailsMovie: null,
-  activeModalWindow: false,
-  activeModalMovie: null
+  errorMessage: '',
+  isLoading: false,
+  movies: [],
+  totalAmount: null
 };
 
 const movie = (state = initialState, action) => {
   switch (action.type) {
-    case actions.START_ASYNC_REQUEST:
+    case actions.CATCH_ERROR:
       return {
         ...state,
-        isLoading: true
+        errorMessage: action.payload
+      };
+    case actions.CLOSE_MODAL:
+      return {
+        ...state,
+        activeModalWindow: false,
+        activeModalMovie: null
+      };
+    case actions.CLOSE_MOVIE_DETAILS:
+      return {
+        ...state,
+        activeMovieDetails: false,
+        activeMovieDetailsMovie: null
       };
     case actions.FETCH_MOVIES_SUCCESS:
       return {
@@ -25,10 +37,11 @@ const movie = (state = initialState, action) => {
         movies: action.payload.data,
         totalAmount: action.payload.totalAmount
       };
-    case actions.CATCH_ERROR:
+    case actions.SHOW_MODAL:
       return {
         ...state,
-        errorMessage: action.payload
+        activeModalWindow: action.payload.activeModalWindow,
+        activeModalMovie: action.payload.activeModalMovie
       };
     case actions.SHOW_MOVIE_DETAILS:
       return {
@@ -36,23 +49,10 @@ const movie = (state = initialState, action) => {
         activeMovieDetails: true,
         activeMovieDetailsMovie: action.payload
       };
-    case actions.CLOSE_MOVIE_DETAILS:
+    case actions.START_ASYNC_REQUEST:
       return {
         ...state,
-        activeMovieDetails: false,
-        activeMovieDetailsMovie: null
-      };
-    case actions.SHOW_MODAL:
-      return {
-        ...state,
-        activeModalWindow: action.payload.activeModalWindow,
-        activeModalMovie: action.payload.activeModalMovie
-      };
-    case actions.CLOSE_MODAL:
-      return {
-        ...state,
-        activeModalWindow: false,
-        activeModalMovie: null
+        isLoading: true
       };
     default:
       return state;

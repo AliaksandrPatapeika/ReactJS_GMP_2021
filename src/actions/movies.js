@@ -1,14 +1,18 @@
 import 'regenerator-runtime/runtime';
 
-import axios from 'axios';
-
-import {sleep} from '../utils';
 import * as actions from './actionTypes';
 
-const url = 'http://localhost:4000/movies';
+export const catchError = (error) => ({
+  type: actions.CATCH_ERROR,
+  payload: error
+});
 
-export const startAsyncRequest = () => ({
-  type: actions.START_ASYNC_REQUEST
+export const closeModal = () => ({
+  type: actions.CLOSE_MODAL
+});
+
+export const closeMovieDetails = () => ({
+  type: actions.CLOSE_MOVIE_DETAILS
 });
 
 export const fetchMoviesSuccess = (movies) => ({
@@ -16,54 +20,19 @@ export const fetchMoviesSuccess = (movies) => ({
   payload: movies
 });
 
-export const catchError = (error) => ({
-  type: actions.CATCH_ERROR,
-  payload: error
+export const setActiveFilter = (genre) => ({
+  type: actions.SET_ACTIVE_FILTER,
+  payload: genre
 });
 
-export const fetchMovies = () => async (dispatch) => {
-  try {
-    dispatch(startAsyncRequest());
-    await sleep(2000);
-    const {data} = await axios.get(`${url}?limit=6`);
-
-    dispatch(fetchMoviesSuccess(data));
-  } catch (error) {
-    dispatch(catchError(error.message));
-  }
-};
-
-export const addMovie = (movie) => async (dispatch) => {
-  try {
-    await axios.post(url, movie);
-  } catch (error) {
-    dispatch(catchError(error.message));
-  }
-};
-
-export const editMovie = (movie) => async (dispatch) => {
-  try {
-    await axios.put(url, movie);
-  } catch (error) {
-    dispatch(catchError(error.message));
-  }
-};
-
-export const deleteMovie = (movieId) => async (dispatch) => {
-  try {
-    await axios.delete(`${url}/${movieId}`);
-  } catch (error) {
-    dispatch(catchError(error.message));
-  }
-};
-
-export const showMovieDetails = (movie) => ({
-  type: actions.SHOW_MOVIE_DETAILS,
-  payload: movie
+export const setSortBy = (value) => ({
+  type: actions.SET_SORT_BY,
+  payload: value
 });
 
-export const closeMovieDetails = () => ({
-  type: actions.CLOSE_MOVIE_DETAILS
+export const setSortOrder = (value) => ({
+  type: actions.SET_SORT_ORDER,
+  payload: value
 });
 
 export const showModal = (activeModalWindow, activeModalMovie) => ({
@@ -71,6 +40,11 @@ export const showModal = (activeModalWindow, activeModalMovie) => ({
   payload: {activeModalWindow, activeModalMovie}
 });
 
-export const closeModal = () => ({
-  type: actions.CLOSE_MODAL
+export const showMovieDetails = (movie) => ({
+  type: actions.SHOW_MOVIE_DETAILS,
+  payload: movie
+});
+
+export const startAsyncRequest = () => ({
+  type: actions.START_ASYNC_REQUEST
 });

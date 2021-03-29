@@ -1,29 +1,48 @@
 import './Main.less';
 
+import axios from 'axios';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {fetchMovies} from '../../actions/movies';
-import MainContent from '../MainContent';
+import {catchError, fetchMoviesSuccess, startAsyncRequest} from '../../actions/movies';
+import ResultCount from '../../components/ResultCount';
+import {URL} from '../../constants/constants';
+import {getQueryString, sleep} from '../../utils';
+import Menu from '../Menu';
+import MoviesList from '../MoviesList';
 import NoMoviesFound from '../NoMoviesFound';
 
 const Main = () => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
+  const totalAmount = useSelector((state) => state.movie.totalAmount);
+  const query = useSelector((state) => state.query);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovies());
-  }, [dispatch]);
+    const fetchMovies = async () => {
+      try {
+        const params = getQueryString(query);
+        const fullUrl = `${URL}${params}`;
 
-  return (
-    <>
-      {!activeModalWindow && (
-      <main className="mainContainer">
-        <MainContent />
-        <NoMoviesFound />
-      </main>
-      )}
-    </>
+        dispatch(startAsyncRequest());
+        await sleep(700);
+        const {data} = await axios.get(`${fullUrl}`);
+
+        dispatch(fetchMoviesSuccess(data));
+      } catch (error) {
+        dispatch(catchError(error.message));
+      }
+    };
+
+    fetchMovies();
+  }, [dispatch, query]);
+  return !activeModalWindow && (
+    <main className="mainContainer">
+      <Menu />
+      <ResultCount count={totalAmount} />
+      <MoviesList />
+      <NoMoviesFound />
+    </main>
   );
 };
 

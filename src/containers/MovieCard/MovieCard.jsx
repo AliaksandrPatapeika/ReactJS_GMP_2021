@@ -67,7 +67,7 @@ const MovieCard = ({
       />
       <div className="movieTitleReleaseDateContainer">
         <MovieTitle title={title} />
-        <MovieReleaseDate year={new Date(release_date).getFullYear()} />
+        <MovieReleaseDate releaseDate={release_date} />
       </div>
       <MovieGenres genres={genres.join(', ')} />
     </div>

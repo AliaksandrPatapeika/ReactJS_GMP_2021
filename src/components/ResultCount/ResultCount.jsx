@@ -6,7 +6,7 @@ import React from 'react';
 const ResultCount = ({count}) => (
   <div className="resultCountContainer">
     <span className="resultCount">
-      {count}
+      {count || 0}
       {' '}
     </span>
     <span>movies found</span>

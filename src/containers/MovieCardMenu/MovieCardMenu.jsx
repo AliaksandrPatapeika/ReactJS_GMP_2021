@@ -41,38 +41,34 @@ const MovieCardMenu = ({
     };
   }, [showSubMenu, handleKeyDown]);
 
-  return (
-    <>
-      {showSubMenu && (
-      <div className="movieCardMenuContainer" onBlur={handleBlur}>
-        <Button id="movieCardMenuCloseButton" className="closeButton" onClick={closeSubMenu}>
-          <i className="fa fa-times" aria-hidden="true" />
-        </Button>
-        <nav>
-          <ul>
-            <li
-              role="menuitem"
-              tabIndex="0"
-              className="menuItem"
-              onClick={showEditMovieWindow}
-              onKeyPress={showEditMovieWindow}
-            >
-              Edit
-            </li>
-            <li
-              role="menuitem"
-              tabIndex="0"
-              className="menuItem"
-              onClick={showDeleteMovieWindow}
-              onKeyPress={showDeleteMovieWindow}
-            >
-              Delete
-            </li>
-          </ul>
-        </nav>
-      </div>
-      )}
-    </>
+  return showSubMenu && (
+  <div className="movieCardMenuContainer" onBlur={handleBlur}>
+    <Button id="movieCardMenuCloseButton" className="closeButton" onClick={closeSubMenu}>
+      <i className="fa fa-times" aria-hidden="true" />
+    </Button>
+    <nav>
+      <ul>
+        <li
+          role="menuitem"
+          tabIndex="0"
+          className="menuItem"
+          onClick={showEditMovieWindow}
+          onKeyPress={showEditMovieWindow}
+        >
+          Edit
+        </li>
+        <li
+          role="menuitem"
+          tabIndex="0"
+          className="menuItem"
+          onClick={showDeleteMovieWindow}
+          onKeyPress={showDeleteMovieWindow}
+        >
+          Delete
+        </li>
+      </ul>
+    </nav>
+  </div>
   );
 };
 

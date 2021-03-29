@@ -23,7 +23,7 @@ class ErrorBoundary extends Component {
 	  const {hasError} = this.state;
 	  const {children, errorMessage} = this.props;
 
-	  return <>{hasError || errorMessage ? <OopsText errorMessage={errorMessage} /> : children}</>;
+	  return hasError || errorMessage ? <OopsText errorMessage={errorMessage} /> : children;
 	}
 }
 

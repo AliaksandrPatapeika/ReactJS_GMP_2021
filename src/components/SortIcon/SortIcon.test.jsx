@@ -6,7 +6,7 @@ import SortIcon from './SortIcon';
 describe('SortIcon', () => {
   test('renders correctly', () => {
     const sortIcon = renderer
-      .create(<SortIcon sortOrderAsc />)
+      .create(<SortIcon sortOrder="desc" />)
       .toJSON();
 
     expect(sortIcon).toMatchSnapshot();

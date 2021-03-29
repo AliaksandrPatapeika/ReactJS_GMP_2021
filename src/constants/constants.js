@@ -29,7 +29,12 @@ export const Genres = [
 ];
 
 export const SortBy = [
-  {id: 1, value: 'releaseDate', label: 'RELEASE DATE'},
-  {id: 2, value: 'rating', label: 'RATING'},
-  {id: 3, value: 'genre', label: 'GENRE'}
+  {id: 1, value: 'release_date', label: 'RELEASE DATE'},
+  {id: 2, value: 'runtime', label: 'RUNTIME'},
+  {id: 3, value: 'vote_average', label: 'VOTE AVERAGE'},
+  {id: 4, value: 'vote_count', label: 'VOTE COUNT'},
+  {id: 5, value: 'budget', label: 'BUDGET'},
+  {id: 6, value: 'revenue', label: 'REVENUE'}
 ];
+
+export const URL = 'http://localhost:4000/movies';

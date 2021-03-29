@@ -39,34 +39,30 @@ const ModalWindow = () => {
     };
   }, [activeModalWindow, handleKeyDown]);
 
-  return (
-    <>
-      {activeModalWindow && (
-      <div className="modalWindowContainer">
-        <Blur>
-          <Logo />
-          <div className="modalWindow">
-            <Button
-              id="modalWindowCloseButton"
-              className="closeButton"
-              onClick={closeModalWindow}
-            >
-              <i className="fa fa-times" aria-hidden="true" />
-            </Button>
-            <div className="modalBody">
-              <AddMovie formTitle="ADD MOVIE" />
-              {activeModalMovie && (
-                <>
-                  <EditMovie formTitle="EDIT MOVIE" movie={activeModalMovie} />
-                  <DeleteMovie formTitle="DELETE MOVIE" movieId={activeModalMovie.id} />
-                </>
-              )}
-            </div>
-          </div>
-        </Blur>
+  return activeModalWindow && (
+  <div className="modalWindowContainer">
+    <Blur>
+      <Logo />
+      <div className="modalWindow">
+        <Button
+          id="modalWindowCloseButton"
+          className="closeButton"
+          onClick={closeModalWindow}
+        >
+          <i className="fa fa-times" aria-hidden="true" />
+        </Button>
+        <div className="modalBody">
+          <AddMovie formTitle="ADD MOVIE" />
+          {activeModalMovie && (
+          <>
+            <EditMovie formTitle="EDIT MOVIE" movie={activeModalMovie} />
+            <DeleteMovie formTitle="DELETE MOVIE" movieId={activeModalMovie.id} />
+          </>
+          )}
+        </div>
       </div>
-      )}
-    </>
+    </Blur>
+  </div>
   );
 };
 

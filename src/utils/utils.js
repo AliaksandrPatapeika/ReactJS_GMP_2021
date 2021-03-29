@@ -24,3 +24,9 @@ export const convertMovieData = (movieData) => ({
   vote_average: Number(movieData.vote_average),
   vote_count: Number(movieData.vote_count)
 });
+
+export const getQueryString = ({
+  activeFilter, limit, sortBy, sortOrder
+}) => `?filter=${activeFilter === 'ALL' ? '' : activeFilter}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+
+export const delimiteredCost = (value) => `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} $`;

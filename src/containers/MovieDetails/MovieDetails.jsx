@@ -10,17 +10,13 @@ import HeaderTop from '../HeaderTop/HeaderTop';
 const MovieDetails = () => {
   const activeMovieDetails = useSelector((state) => state.movie.activeMovieDetails);
 
-  return (
-    <>
-      {activeMovieDetails && (
-      <div className="headerContainer movieDetailsContainer">
-        <Blur>
-          <HeaderTop />
-          <MovieDetailsContent />
-        </Blur>
-      </div>
-      )}
-    </>
+  return activeMovieDetails && (
+  <div className="headerContainer movieDetailsContainer">
+    <Blur>
+      <HeaderTop />
+      <MovieDetailsContent />
+    </Blur>
+  </div>
   );
 };
 

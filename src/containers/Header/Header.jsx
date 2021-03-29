@@ -9,17 +9,13 @@ const Header = () => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const activeMovieDetails = useSelector((state) => state.movie.activeMovieDetails);
 
-  return (
-    <>
-      {!activeModalWindow && !activeMovieDetails && (
-      <header className="headerContainer">
-        <Blur>
-          <HeaderTop />
-          <HeaderMain />
-        </Blur>
-      </header>
-      )}
-    </>
+  return !activeModalWindow && !activeMovieDetails && (
+  <header className="headerContainer">
+    <Blur>
+      <HeaderTop />
+      <HeaderMain />
+    </Blur>
+  </header>
   );
 };
 

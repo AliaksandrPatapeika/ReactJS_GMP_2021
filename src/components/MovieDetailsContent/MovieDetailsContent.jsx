@@ -4,7 +4,8 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
 import noImage from '../../img/noImage.png';
-import {addDefaultSrc} from '../../utils';
+import {addDefaultSrc, delimiteredCost} from '../../utils';
+import MovieDetailsLabel from '../MovieDetailsLabel';
 
 const MovieDetailsContent = () => {
   const activeMovieDetailsMovie = useSelector((state) => state.movie.activeMovieDetailsMovie);
@@ -14,7 +15,17 @@ const MovieDetailsContent = () => {
   }, [activeMovieDetailsMovie]);
 
   const {
-    poster_path, title, vote_average, tagline, release_date, runtime, overview
+    poster_path,
+    title,
+    vote_average,
+    vote_count,
+    tagline,
+    release_date,
+    runtime,
+    genres,
+    budget,
+    revenue,
+    overview
   } = activeMovieDetailsMovie;
 
   return (
@@ -28,18 +39,24 @@ const MovieDetailsContent = () => {
       <div className="movieDetailsContent">
         <div className="movieDetailsTitleRating">
           <span className="movieDetailsTitle">{title}</span>
-          <div className="movieDetailsRating">{vote_average || '-'}</div>
+          <div className="movieDetailsRating" title={`Vote count: ${vote_count}`}>
+            {vote_average
+						|| '-'}
+          </div>
         </div>
         <div>{tagline || 'No tagline'}</div>
         <div className="movieDetailsReleaseDateRuntime">
-          <div>{new Date(release_date).getFullYear()}</div>
+          <div title={`Release date: ${release_date}`}>{new Date(release_date).getFullYear()}</div>
           <div>
             {runtime || 0}
             {' '}
             min
           </div>
         </div>
-        <div>{overview || 'No overview'}</div>
+        <MovieDetailsLabel label="Genres" value={genres.join(', ')} />
+        <MovieDetailsLabel label="Budget" value={delimiteredCost(budget)} />
+        <MovieDetailsLabel label="Revenue" value={delimiteredCost(revenue)} />
+        <div className="overview">{overview || 'No overview'}</div>
       </div>
     </div>
   );
