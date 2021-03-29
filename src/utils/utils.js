@@ -1,5 +1,6 @@
 import {filter, includes, map} from 'lodash';
 
+import {URL} from '../constants/constants';
 import noImage from '../img/noImage.png';
 
 export const getGenres = (Genres, movieGenres) => filter(
@@ -27,6 +28,6 @@ export const convertMovieData = (movieData) => ({
 
 export const getQueryString = ({
   activeFilter, limit, sortBy, sortOrder
-}) => `?filter=${activeFilter === 'ALL' ? '' : activeFilter}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+}) => `${URL}?filter=${activeFilter === 'ALL' ? '' : activeFilter}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
 
 export const delimiteredCost = (value) => `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} $`;

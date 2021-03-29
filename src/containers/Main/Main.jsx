@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {catchError, fetchMoviesSuccess, startAsyncRequest} from '../../actions/movies';
 import ResultCount from '../../components/ResultCount';
-import {URL} from '../../constants/constants';
 import {getQueryString, sleep} from '../../utils';
 import Menu from '../Menu';
 import MoviesList from '../MoviesList';
@@ -21,12 +20,9 @@ const Main = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const params = getQueryString(query);
-        const fullUrl = `${URL}${params}`;
-
         dispatch(startAsyncRequest());
         await sleep(700);
-        const {data} = await axios.get(`${fullUrl}`);
+        const {data} = await axios.get(getQueryString(query));
 
         dispatch(fetchMoviesSuccess(data));
       } catch (error) {
