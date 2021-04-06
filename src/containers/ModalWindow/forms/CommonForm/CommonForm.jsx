@@ -3,7 +3,6 @@ import React from 'react';
 
 import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
-import ValidationErrorMessage from '../../../../components/ValidationErrorMessage';
 import {Genres} from '../../../../constants';
 import FormItem from '../FormItem';
 
@@ -12,15 +11,21 @@ const CommonForm = ({formik, isEdit}) => (
     {isEdit && (
     <FormItem label="MOVIE ID" name="id" readOnly />
     )}
-    <FormItem name="title" required />
+    <FormItem name="title" required errorMessage={formik.errors.title} />
     <FormItem
       type="date"
       name="release_date"
       className={formik.values.release_date ? 'input valid-date' : 'input'}
       placeholder="Select Date"
       required
+      errorMessage={formik.errors.release_date}
     />
-    <FormItem name="poster_path" label="MOVIE URL" placeholder="Movie URL here" />
+    <FormItem
+      name="poster_path"
+      label="MOVIE URL"
+      placeholder="Movie URL here"
+      errorMessage={formik.errors.poster_path}
+    />
     <FormItem
       className="select"
       classNamePrefix="select"
@@ -36,6 +41,7 @@ const CommonForm = ({formik, isEdit}) => (
       component={Select}
       value={formik.values.genres}
       required
+      errorMessage={formik.errors.genres}
       onChange={(event) => {
 			  formik.handleChange({
 			    target: {
@@ -45,17 +51,13 @@ const CommonForm = ({formik, isEdit}) => (
 			  });
       }}
     />
-    {
-			formik.errors.genres
-			&& <ValidationErrorMessage>{formik.errors.genres}</ValidationErrorMessage>
-		}
-    <FormItem name="overview" required />
-    <FormItem name="runtime" required />
-    <FormItem name="budget" />
-    <FormItem name="revenue" />
-    <FormItem name="tagline" required />
-    <FormItem name="vote_average" />
-    <FormItem name="vote_count" />
+    <FormItem name="overview" required errorMessage={formik.errors.overview} />
+    <FormItem name="runtime" required errorMessage={formik.errors.runtime} />
+    <FormItem name="budget" errorMessage={formik.errors.budget} />
+    <FormItem name="revenue" errorMessage={formik.errors.revenue} />
+    <FormItem name="tagline" required errorMessage={formik.errors.tagline} />
+    <FormItem name="vote_average" errorMessage={formik.errors.vote_average} />
+    <FormItem name="vote_count" errorMessage={formik.errors.vote_count} />
     <div className="modalFooter">
       <Button
         type="reset"

@@ -1,13 +1,12 @@
-import {ErrorMessage, Field} from 'formik';
+import {Field} from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ValidationErrorMessage from '../../../../components/ValidationErrorMessage';
 import {getLabelFromName, getPlaceholderFromName} from '../../../../utils';
 
 function FormItem(props) {
   const {
-    label, className, name, placeholder, type, required, ...rest
+    label, className, name, placeholder, type, required, errorMessage, ...rest
   } = props;
 
   return (
@@ -25,7 +24,8 @@ function FormItem(props) {
         autoComplete="off"
         {...rest}
       />
-      <ErrorMessage name={name} component={ValidationErrorMessage} />
+      {errorMessage
+			&& <span className="validationErrorMessage">{errorMessage}</span>}
     </div>
   );
 }
@@ -36,7 +36,8 @@ FormItem.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  errorMessage: PropTypes.string
 };
 
 FormItem.defaultProps = {
@@ -44,7 +45,8 @@ FormItem.defaultProps = {
   type: 'text',
   label: '',
   placeholder: '',
-  required: false
+  required: false,
+  errorMessage: ''
 };
 
 export default FormItem;

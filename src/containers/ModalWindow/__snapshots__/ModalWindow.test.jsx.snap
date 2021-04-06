@@ -70,6 +70,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value=""
             />
+            
           </div>
           <div
             className="formItem"
@@ -92,6 +93,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="date"
               value=""
             />
+            
           </div>
           <div
             className="formItem"
@@ -114,6 +116,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value=""
             />
+            
           </div>
           <div
             className="formItem"
@@ -311,6 +314,7 @@ exports[`ModalWindow renders correctly 1`] = `
                 value={Array []}
               />
             </div>
+            
           </div>
           <div
             className="formItem"
@@ -333,6 +337,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value=""
             />
+            
           </div>
           <div
             className="formItem"
@@ -355,6 +360,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value={0}
             />
+            
           </div>
           <div
             className="formItem"
@@ -377,6 +383,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value={0}
             />
+            
           </div>
           <div
             className="formItem"
@@ -399,6 +406,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value={0}
             />
+            
           </div>
           <div
             className="formItem"
@@ -421,6 +429,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value=""
             />
+            
           </div>
           <div
             className="formItem"
@@ -443,6 +452,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value={0}
             />
+            
           </div>
           <div
             className="formItem"
@@ -465,6 +475,7 @@ exports[`ModalWindow renders correctly 1`] = `
               type="text"
               value={0}
             />
+            
           </div>
           <div
             className="modalFooter"
