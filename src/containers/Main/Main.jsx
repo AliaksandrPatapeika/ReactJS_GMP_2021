@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {catchError, fetchMoviesSuccess, startAsyncRequest} from '../../actions/movies';
 import ResultCount from '../../components/ResultCount';
-import {getQueryString, sleep} from '../../utils';
+import {getQueryString, scrollToTop, sleep} from '../../utils';
 import Menu from '../Menu';
 import MoviesList from '../MoviesList';
 import NoMoviesFound from '../NoMoviesFound';
@@ -30,8 +30,11 @@ const Main = () => {
       }
     };
 
-    fetchMovies();
-  }, [dispatch, query]);
+    if (!activeModalWindow) {
+      fetchMovies();
+      scrollToTop();
+    }
+  }, [activeModalWindow, dispatch, query]);
   return !activeModalWindow && (
     <main className="mainContainer">
       <Menu />

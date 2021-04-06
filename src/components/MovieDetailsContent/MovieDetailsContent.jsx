@@ -4,14 +4,14 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
 import noImage from '../../img/noImage.png';
-import {addDefaultSrc, delimiteredCost} from '../../utils';
+import {addDefaultSrc, delimiteredCost, scrollToTop} from '../../utils';
 import MovieDetailsLabel from '../MovieDetailsLabel';
 
 const MovieDetailsContent = () => {
   const activeMovieDetailsMovie = useSelector((state) => state.movie.activeMovieDetailsMovie);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, [activeMovieDetailsMovie]);
 
   const {

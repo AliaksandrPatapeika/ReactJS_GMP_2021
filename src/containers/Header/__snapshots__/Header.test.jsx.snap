@@ -26,8 +26,8 @@ exports[`Header renders correctly 1`] = `
       </div>
       <button
         className="addMovieButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -53,8 +53,8 @@ exports[`Header renders correctly 1`] = `
         />
         <button
           className="searchButton"
-          disabled=""
-          id=""
+          disabled={false}
+          id={null}
           onClick={[Function]}
           type="button"
         >

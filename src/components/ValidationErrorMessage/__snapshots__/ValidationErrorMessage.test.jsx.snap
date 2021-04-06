@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ValidationErrorMessage renders correctly 1`] = `
+<span
+  className="validationErrorMessage"
+>
+  Validation error message
+</span>
+`;

@@ -22,7 +22,7 @@
 			flex-direction: column;
 			padding: 0 88px;
 
-			.formInput {
+			.formItem {
 				display: flex;
 				flex-direction: column;
 			}
@@ -65,8 +65,9 @@
 					font-family: @NetflixSans-Regular;
 					background-color: transparent;
 
-					&:hover,
-					&:focus {
+
+					&:hover:enabled,
+					&:focus:enabled {
 						color: @red-hover;
 						border-color: @red-hover;
 					}
@@ -76,8 +77,15 @@
 						color: @white;
 						background-color: @red;
 
-						&:hover,
-						&:focus {
+						&:disabled {
+							color: @light-gray;
+							cursor: default;
+							background-color: transparent;
+						}
+
+						&:hover:enabled,
+						&:focus:enabled {
+							color: @white;
 							background-color: @red-hover;
 						}
 					}
@@ -98,23 +106,22 @@ input[type="date"] {
 		z-index: 1;
 		outline: none;
 	}
-
-	&:not(:focus):not(:valid)::-webkit-datetime-edit-year-field,
-	&:not(:focus):not(:valid)::-webkit-datetime-edit-month-field,
-	&:not(:focus):not(:valid)::-webkit-datetime-edit-day-field,
-	&:not(:focus):not(:valid)::-webkit-datetime-edit-text {
+	
+	&:not(:focus):not(.valid-date)::-webkit-datetime-edit-year-field,
+	&:not(:focus):not(.valid-date)::-webkit-datetime-edit-month-field,
+	&:not(:focus):not(.valid-date)::-webkit-datetime-edit-day-field,
+	&:not(:focus):not(.valid-date)::-webkit-datetime-edit-text {
 		color: transparent;
 	}
 
-	&:after {
+	&:not(.valid-date):after{
 		content: attr(placeholder);
 		position: absolute;
 		/* Placeholder color */
 		color: @placeholder;
 	}
 
-	&:focus:after,
-	&:valid:after {
+	&:focus:after	{
 		content: '';
 	}
 

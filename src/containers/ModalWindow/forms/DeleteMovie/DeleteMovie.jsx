@@ -1,5 +1,3 @@
-import '../../ModalWindow.less';
-
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,15 +5,14 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {catchError} from '../../../../actions/movies';
 import Button from '../../../../components/Button';
-import {URL} from '../../../../constants/constants';
+import {BASE_URL} from '../../../../constants/constants';
 
 const DeleteMovie = ({formTitle, movieId}) => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const dispatch = useDispatch();
-
-  const onSubmitHandler = async () => {
+  const onSubmit = async () => {
     try {
-      await axios.delete(`${URL}/${movieId}`);
+      await axios.delete(`${BASE_URL}/${movieId}`);
     } catch (error) {
       dispatch(catchError(error.message));
     }
@@ -24,7 +21,7 @@ const DeleteMovie = ({formTitle, movieId}) => {
   return activeModalWindow === 'deleteMovie' && (
   <>
     <span className="title">{formTitle}</span>
-    <form onSubmit={onSubmitHandler}>
+    <form onSubmit={onSubmit}>
       <div className="formInput">
         <h1 className="content">Are you sure you want to delete this movie?</h1>
       </div>

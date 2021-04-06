@@ -37,4 +37,4 @@ export const SortBy = [
   {id: 6, value: 'revenue', label: 'REVENUE'}
 ];
 
-export const URL = 'http://localhost:4000/movies';
+export const BASE_URL = 'http://localhost:4000/movies';

@@ -26,7 +26,7 @@ exports[`ModalWindow renders correctly 1`] = `
     >
       <button
         className="closeButton"
-        disabled=""
+        disabled={false}
         id="modalWindowCloseButton"
         onClick={[Function]}
         type="button"
@@ -50,7 +50,7 @@ exports[`ModalWindow renders correctly 1`] = `
           onSubmit={[Function]}
         >
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label required-label"
@@ -63,14 +63,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="title"
               name="title"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Title here"
               required={true}
               type="text"
+              value=""
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label required-label"
@@ -79,17 +81,20 @@ exports[`ModalWindow renders correctly 1`] = `
               RELEASE DATE
             </label>
             <input
+              autoComplete="off"
               className="input"
               id="release_date"
               name="release_date"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Select Date"
               required={true}
               type="date"
+              value=""
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label"
@@ -102,13 +107,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="poster_path"
               name="poster_path"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Movie URL here"
-              type="url"
+              required={false}
+              type="text"
+              value=""
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label required-label"
@@ -160,6 +168,72 @@ exports[`ModalWindow renders correctly 1`] = `
                           autoComplete="off"
                           autoCorrect="off"
                           disabled={false}
+                          form={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "getFieldHelpers": [Function],
+                              "getFieldMeta": [Function],
+                              "getFieldProps": [Function],
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialErrors": Object {},
+                              "initialStatus": undefined,
+                              "initialTouched": Object {},
+                              "initialValues": Object {
+                                "budget": 0,
+                                "genres": Array [],
+                                "overview": "",
+                                "poster_path": "",
+                                "release_date": "",
+                                "revenue": 0,
+                                "runtime": 0,
+                                "tagline": "",
+                                "title": "",
+                                "vote_average": 0,
+                                "vote_count": 0,
+                              },
+                              "isSubmitting": false,
+                              "isValid": true,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "status": undefined,
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validateOnMount": false,
+                              "values": Object {
+                                "budget": 0,
+                                "genres": Array [],
+                                "overview": "",
+                                "poster_path": "",
+                                "release_date": "",
+                                "revenue": 0,
+                                "runtime": 0,
+                                "tagline": "",
+                                "title": "",
+                                "vote_average": 0,
+                                "vote_count": 0,
+                              },
+                            }
+                          }
                           id="react-select-2-input"
                           onBlur={[Function]}
                           onChange={[Function]}
@@ -239,7 +313,7 @@ exports[`ModalWindow renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label required-label"
@@ -252,17 +326,19 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="overview"
               name="overview"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Overview here"
               required={true}
               type="text"
+              value=""
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
-              className="label"
+              className="label required-label"
               htmlFor="runtime"
             >
               RUNTIME
@@ -272,13 +348,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="runtime"
               name="runtime"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Runtime here"
-              type="number"
+              required={true}
+              type="text"
+              value={0}
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label"
@@ -291,13 +370,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="budget"
               name="budget"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Budget here"
-              type="number"
+              required={false}
+              type="text"
+              value={0}
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label"
@@ -310,13 +392,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="revenue"
               name="revenue"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Revenue here"
-              type="number"
+              required={false}
+              type="text"
+              value={0}
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label required-label"
@@ -329,14 +414,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="tagline"
               name="tagline"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Tagline here"
               required={true}
               type="text"
+              value=""
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label"
@@ -349,14 +436,16 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="vote_average"
               name="vote_average"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Vote average here"
-              step="0.1"
-              type="number"
+              required={false}
+              type="text"
+              value={0}
             />
           </div>
           <div
-            className="formInput"
+            className="formItem"
           >
             <label
               className="label"
@@ -369,9 +458,12 @@ exports[`ModalWindow renders correctly 1`] = `
               className="input"
               id="vote_count"
               name="vote_count"
+              onBlur={[Function]}
               onChange={[Function]}
               placeholder="Vote count here"
-              type="number"
+              required={false}
+              type="text"
+              value={0}
             />
           </div>
           <div
@@ -379,8 +471,8 @@ exports[`ModalWindow renders correctly 1`] = `
           >
             <button
               className="button"
-              disabled=""
-              id=""
+              disabled={false}
+              id={null}
               onClick={[Function]}
               type="reset"
             >
@@ -389,8 +481,8 @@ exports[`ModalWindow renders correctly 1`] = `
             </button>
             <button
               className="button"
-              disabled=""
-              id=""
+              disabled={false}
+              id={null}
               onClick={[Function]}
               type="submit"
             >

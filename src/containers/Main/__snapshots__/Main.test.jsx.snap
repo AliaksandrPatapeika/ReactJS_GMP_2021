@@ -170,8 +170,8 @@ exports[`Main renders correctly 1`] = `
       </div>
       <button
         className="arrow"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -205,8 +205,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -220,8 +220,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -258,8 +258,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -273,8 +273,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -311,8 +311,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -326,8 +326,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -364,8 +364,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -379,8 +379,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -417,8 +417,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -432,8 +432,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -470,8 +470,8 @@ exports[`Main renders correctly 1`] = `
     >
       <button
         className="posterButton"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >
@@ -485,8 +485,8 @@ exports[`Main renders correctly 1`] = `
       </button>
       <button
         className="threeDotsIcon"
-        disabled=""
-        id=""
+        disabled={false}
+        id={null}
         onClick={[Function]}
         type="button"
       >

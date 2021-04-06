@@ -5,7 +5,7 @@ exports[`OopsText renders correctly 1`] = `
   className="oopsTextContainer"
 >
   <div
-    className="errorMessage"
+    className="oopsTextErrorMessage"
   >
     Error message
   </div>

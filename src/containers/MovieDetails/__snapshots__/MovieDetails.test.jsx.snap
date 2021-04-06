@@ -26,7 +26,7 @@ exports[`MovieDetails renders correctly 1`] = `
       </div>
       <button
         className="returnToMainButton"
-        disabled=""
+        disabled={false}
         id="returnToMainButton"
         onClick={[Function]}
         type="button"

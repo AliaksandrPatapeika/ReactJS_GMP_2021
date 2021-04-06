@@ -27,8 +27,8 @@ Array [
         </div>
         <button
           className="addMovieButton"
-          disabled=""
-          id=""
+          disabled={false}
+          id={null}
           onClick={[Function]}
           type="button"
         >
@@ -54,8 +54,8 @@ Array [
           />
           <button
             className="searchButton"
-            disabled=""
-            id=""
+            disabled={false}
+            id={null}
             onClick={[Function]}
             type="button"
           >
@@ -235,8 +235,8 @@ Array [
         </div>
         <button
           className="arrow"
-          disabled=""
-          id=""
+          disabled={false}
+          id={null}
           onClick={[Function]}
           type="button"
         >
