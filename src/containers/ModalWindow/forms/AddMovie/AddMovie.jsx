@@ -1,29 +1,22 @@
-import axios from 'axios';
 import {FormikProvider, useFormik} from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {catchError, closeModal} from '../../../../actions/movies';
-import {BASE_URL} from '../../../../constants/constants';
+import {addMovie} from '../../../../actions/movies';
 import {convertMovieData, getValidationSchema} from '../../../../utils';
 import CommonForm from '../CommonForm';
 
 const AddMovie = ({formTitle}) => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const dispatch = useDispatch();
-  const onSubmit = async (values) => {
+  const onSubmit = (values) => {
     const payload = {
       ...values,
       ...convertMovieData(values)
     };
 
-    try {
-      await axios.post(BASE_URL, payload);
-      dispatch(closeModal());
-    } catch (error) {
-      dispatch(catchError(error.message));
-    }
+    dispatch(addMovie(payload));
   };
 
   const initialValues = {

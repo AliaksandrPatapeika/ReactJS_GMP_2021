@@ -1,5 +1,9 @@
 import 'regenerator-runtime/runtime';
 
+import axios from 'axios';
+
+import {BASE_URL} from '../constants/constants';
+import {getQueryString, scrollToTop, sleep} from '../utils';
 import * as actions from './actionTypes';
 
 export const catchError = (error) => ({
@@ -48,3 +52,50 @@ export const showMovieDetails = (movie) => ({
 export const startAsyncRequest = () => ({
   type: actions.START_ASYNC_REQUEST
 });
+
+export const fetchMovies = () => (dispatch, getState) => {
+  dispatch(startAsyncRequest());
+  sleep(700)
+    .then(() => axios
+      .get(getQueryString(getState().query))
+      .then((res) => {
+        dispatch(fetchMoviesSuccess(res.data));
+      })
+      .catch((error) => {
+        dispatch(catchError(error.message));
+      }));
+};
+
+export const addMovie = (payload) => (dispatch, getState) => {
+  axios
+    .post(BASE_URL, payload)
+    .then(() => {
+      dispatch(closeModal());
+      dispatch(fetchMovies(getState().query));
+      scrollToTop();
+    })
+    .catch((error) => {
+      dispatch(catchError(error.message));
+    });
+};
+
+export const editMovie = (payload) => (dispatch, getState) => {
+  axios
+    .put(BASE_URL, payload)
+    .then(() => {
+      dispatch(closeModal());
+      dispatch(fetchMovies(getState().query));
+      scrollToTop();
+    })
+    .catch((error) => {
+      dispatch(catchError(error.message));
+    });
+};
+
+export const deleteMovie = (movieId) => (dispatch) => {
+  axios
+    .delete(`${BASE_URL}/${movieId}`)
+    .catch((error) => {
+      dispatch(catchError(error.message));
+    });
+};

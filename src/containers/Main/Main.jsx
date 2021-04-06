@@ -1,12 +1,10 @@
 import './Main.less';
 
-import axios from 'axios';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {catchError, fetchMoviesSuccess, startAsyncRequest} from '../../actions/movies';
+import {fetchMovies} from '../../actions/movies';
 import ResultCount from '../../components/ResultCount';
-import {getQueryString, scrollToTop, sleep} from '../../utils';
 import Menu from '../Menu';
 import MoviesList from '../MoviesList';
 import NoMoviesFound from '../NoMoviesFound';
@@ -18,23 +16,9 @@ const Main = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        dispatch(startAsyncRequest());
-        await sleep(700);
-        const {data} = await axios.get(getQueryString(query));
+    dispatch(fetchMovies());
+  }, [dispatch, query]);
 
-        dispatch(fetchMoviesSuccess(data));
-      } catch (error) {
-        dispatch(catchError(error.message));
-      }
-    };
-
-    if (!activeModalWindow) {
-      fetchMovies();
-      scrollToTop();
-    }
-  }, [activeModalWindow, dispatch, query]);
   return !activeModalWindow && (
     <main className="mainContainer">
       <Menu />

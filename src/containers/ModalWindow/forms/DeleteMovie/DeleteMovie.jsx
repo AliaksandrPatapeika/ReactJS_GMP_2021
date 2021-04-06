@@ -1,21 +1,15 @@
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {catchError} from '../../../../actions/movies';
+import {deleteMovie} from '../../../../actions/movies';
 import Button from '../../../../components/Button';
-import {BASE_URL} from '../../../../constants/constants';
 
 const DeleteMovie = ({formTitle, movieId}) => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const dispatch = useDispatch();
-  const onSubmit = async () => {
-    try {
-      await axios.delete(`${BASE_URL}/${movieId}`);
-    } catch (error) {
-      dispatch(catchError(error.message));
-    }
+  const onSubmit = () => {
+    dispatch(deleteMovie(movieId));
   };
 
   return activeModalWindow === 'deleteMovie' && (
