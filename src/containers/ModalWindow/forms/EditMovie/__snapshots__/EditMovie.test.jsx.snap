@@ -33,7 +33,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={1}
     />
-    
   </div>
   <div
     className="formItem"
@@ -56,7 +55,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value="Pulp Fiction"
     />
-    
   </div>
   <div
     className="formItem"
@@ -79,7 +77,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="date"
       value="2004-03-15"
     />
-    
   </div>
   <div
     className="formItem"
@@ -102,7 +99,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value="test-file-stub"
     />
-    
   </div>
   <div
     className="formItem"
@@ -302,7 +298,6 @@ exports[`EditMovie renders correctly 1`] = `
         value={Array []}
       />
     </div>
-    
   </div>
   <div
     className="formItem"
@@ -325,7 +320,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value="Pulp Fiction is a 1994 American neo-noir black comedy crime film written and directed by Quentin Tarantino, who conceived it with Roger Avary.[4] Starring John Travolta, Samuel L. Jackson, Bruce Willis, Tim Roth, Ving Rhames, and Uma Thurman, it tells several stories of criminal Los Angeles. The title refers to the pulp magazines and hardboiled crime novels popular during the mid-20th century, known for their graphic violence and punchy dialogue."
     />
-    
   </div>
   <div
     className="formItem"
@@ -348,7 +342,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={154}
     />
-    
   </div>
   <div
     className="formItem"
@@ -371,7 +364,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={55000000}
     />
-    
   </div>
   <div
     className="formItem"
@@ -394,7 +386,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={136906000}
     />
-    
   </div>
   <div
     className="formItem"
@@ -417,7 +408,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value="Mock tagline!"
     />
-    
   </div>
   <div
     className="formItem"
@@ -440,7 +430,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={4.3}
     />
-    
   </div>
   <div
     className="formItem"
@@ -463,7 +452,6 @@ exports[`EditMovie renders correctly 1`] = `
       type="text"
       value={1195}
     />
-    
   </div>
   <div
     className="modalFooter"

@@ -32,7 +32,6 @@ Array [
         type="text"
         value=""
       />
-      
     </div>
     <div
       className="formItem"
@@ -55,7 +54,6 @@ Array [
         type="date"
         value=""
       />
-      
     </div>
     <div
       className="formItem"
@@ -78,7 +76,6 @@ Array [
         type="text"
         value=""
       />
-      
     </div>
     <div
       className="formItem"
@@ -276,7 +273,6 @@ Array [
           value={Array []}
         />
       </div>
-      
     </div>
     <div
       className="formItem"
@@ -299,7 +295,6 @@ Array [
         type="text"
         value=""
       />
-      
     </div>
     <div
       className="formItem"
@@ -322,7 +317,6 @@ Array [
         type="text"
         value={0}
       />
-      
     </div>
     <div
       className="formItem"
@@ -345,7 +339,6 @@ Array [
         type="text"
         value={0}
       />
-      
     </div>
     <div
       className="formItem"
@@ -368,7 +361,6 @@ Array [
         type="text"
         value={0}
       />
-      
     </div>
     <div
       className="formItem"
@@ -391,7 +383,6 @@ Array [
         type="text"
         value=""
       />
-      
     </div>
     <div
       className="formItem"
@@ -414,7 +405,6 @@ Array [
         type="text"
         value={0}
       />
-      
     </div>
     <div
       className="formItem"
@@ -437,7 +427,6 @@ Array [
         type="text"
         value={0}
       />
-      
     </div>
     <div
       className="modalFooter"

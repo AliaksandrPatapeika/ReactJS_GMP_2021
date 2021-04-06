@@ -24,8 +24,7 @@ function FormItem(props) {
         autoComplete="off"
         {...rest}
       />
-      {errorMessage
-			&& <span className="validationErrorMessage">{errorMessage}</span>}
+      {errorMessage ? <span className="validationErrorMessage">{errorMessage}</span> : null}
     </div>
   );
 }
