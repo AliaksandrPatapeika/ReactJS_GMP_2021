@@ -1,6 +1,7 @@
 import {head} from 'lodash';
 import React from 'react';
 import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 
@@ -15,7 +16,9 @@ describe('MovieCard', () => {
     const movieCard = renderer
       .create(
         <Provider store={store}>
-          <MovieCard movie={head(MockMovies)} />
+          <Router>
+            <MovieCard movie={head(MockMovies)} />
+          </Router>
         </Provider>
       )
       .toJSON();

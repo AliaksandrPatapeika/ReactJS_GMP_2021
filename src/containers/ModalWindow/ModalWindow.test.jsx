@@ -5,6 +5,10 @@ import configureMockStore from 'redux-mock-store';
 
 import ModalWindow from './ModalWindow';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'})
+}));
+
 describe('ModalWindow', () => {
   test('renders correctly', () => {
     const mockStore = configureMockStore();

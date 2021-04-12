@@ -1,5 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 
@@ -18,7 +19,9 @@ describe('MoviesList', () => {
     const moviesList = renderer
       .create(
         <Provider store={store}>
-          <MoviesList />
+          <Router>
+            <MoviesList />
+          </Router>
         </Provider>
       )
       .toJSON();

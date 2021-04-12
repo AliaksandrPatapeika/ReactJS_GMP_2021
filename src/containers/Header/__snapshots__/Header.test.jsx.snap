@@ -49,12 +49,14 @@ exports[`Header renders correctly 1`] = `
         <input
           autoComplete="off"
           className="searchInput"
+          onChange={[Function]}
           placeholder="What do you want to watch?"
+          value=""
         />
         <button
           className="searchButton"
           disabled={false}
-          id={null}
+          id="searchButton"
           onClick={[Function]}
           type="button"
         >

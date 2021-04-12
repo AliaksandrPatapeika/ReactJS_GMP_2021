@@ -7,13 +7,19 @@ import configureMockStore from 'redux-mock-store';
 import MockMovies from '../../tests/mocks/mockData';
 import MovieDetails from './MovieDetails';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'}),
+  useHistory: () => ({
+    push: jest.fn()
+  })
+}));
+
 describe('MovieDetails', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);
     const mockStore = configureMockStore();
     const initialState = {
       movie: {
-        activeMovieDetails: true,
         activeMovieDetailsMovie: mockMovie
       }
     };

@@ -1,12 +1,11 @@
 import {
-  filter, includes, isUndefined, map
+  filter as lodashFilter, includes, isUndefined, map
 } from 'lodash';
 import * as Yup from 'yup';
 
-import {BASE_URL} from '../constants/constants';
 import noImage from '../img/noImage.png';
 
-export const getGenres = (Genres, movieGenres) => filter(
+export const getGenres = (Genres, movieGenres) => lodashFilter(
   Genres, ({label}) => includes(movieGenres, label)
 );
 
@@ -78,11 +77,8 @@ export const addDefaultSrc = (event) => {
   event.target.src = noImage;
 };
 
-/* delay emulating a slow connection speed for spinner testing */
-export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const convertMovieData = (movieData) => ({
-  poster_path: movieData.poster_path ? movieData.poster_path : noImage,
+  poster_path: movieData.poster_path ? movieData.poster_path : window.location.origin + noImage,
   genres: map(movieData.genres, (movie) => movie.label),
   budget: Number(movieData.budget),
   revenue: Number(movieData.revenue),
@@ -92,10 +88,8 @@ export const convertMovieData = (movieData) => ({
 });
 
 export const getQueryString = ({
-  activeFilter, limit, sortBy, sortOrder
-}) => `${BASE_URL}?filter=${activeFilter === 'ALL'
-  ? ''
-  : activeFilter}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+  filter, limit, sortBy, sortOrder, search
+}) => `?filter=${filter}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}&searchBy=title`;
 
 export const delimiteredCost = (value) => `${value.toString()
   .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} $`;

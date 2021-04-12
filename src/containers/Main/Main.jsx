@@ -2,30 +2,39 @@ import './Main.less';
 
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useLocation} from 'react-router-dom';
 
-import {fetchMovies} from '../../actions/movies';
-import ResultCount from '../../components/ResultCount';
+import {fetchMovies, setStateFromURL} from '../../actions/movies';
+import {scrollToTop} from '../../utils';
 import Menu from '../Menu';
 import MoviesList from '../MoviesList';
 import NoMoviesFound from '../NoMoviesFound';
+import ResultCount from '../ResultCount';
 
 const Main = () => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
-  const totalAmount = useSelector((state) => state.movie.totalAmount);
-  const query = useSelector((state) => state.query);
+  const search = useSelector((state) => state.query.search);
+  const filter = useSelector((state) => state.query.filter);
+  const sortBy = useSelector((state) => state.query.sortBy);
+  const sortOrder = useSelector((state) => state.query.sortOrder);
+  const limit = useSelector((state) => state.query.limit);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const url = new URLSearchParams(location.search);
 
   useEffect(() => {
+    dispatch(setStateFromURL(url));
     dispatch(fetchMovies());
-  }, [dispatch, query]);
+    scrollToTop();
+  }, [dispatch, search, filter, sortBy, sortOrder, limit, url]);
 
   return !activeModalWindow && (
-    <main className="mainContainer">
-      <Menu />
-      <ResultCount count={totalAmount} />
-      <MoviesList />
-      <NoMoviesFound />
-    </main>
+  <main className="mainContainer">
+    <Menu />
+    <ResultCount />
+    <MoviesList />
+    <NoMoviesFound />
+  </main>
   );
 };
 

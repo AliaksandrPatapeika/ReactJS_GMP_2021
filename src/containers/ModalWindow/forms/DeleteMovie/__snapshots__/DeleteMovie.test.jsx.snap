@@ -10,15 +10,11 @@ Array [
   <form
     onSubmit={[Function]}
   >
-    <div
-      className="formInput"
+    <h1
+      className="content"
     >
-      <h1
-        className="content"
-      >
-        Are you sure you want to delete this movie?
-      </h1>
-    </div>
+      Are you sure you want to delete this movie?
+    </h1>
     <div
       className="modalFooter"
     >

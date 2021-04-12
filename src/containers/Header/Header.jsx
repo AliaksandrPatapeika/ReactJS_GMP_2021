@@ -7,9 +7,8 @@ import HeaderTop from '../HeaderTop';
 
 const Header = () => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
-  const activeMovieDetails = useSelector((state) => state.movie.activeMovieDetails);
 
-  return !activeModalWindow && !activeMovieDetails && (
+  return !activeModalWindow && (
   <header className="headerContainer">
     <Blur>
       <HeaderTop />

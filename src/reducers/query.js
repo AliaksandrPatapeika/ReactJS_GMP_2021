@@ -1,10 +1,11 @@
 import * as actions from '../actions/actionTypes';
 
 const initialState = {
-  activeFilter: 'ALL',
+  filter: '',
   limit: 12,
   sortBy: 'release_date',
-  sortOrder: 'desc'
+  sortOrder: 'desc',
+  search: ''
 };
 
 const query = (state = initialState, action) => {
@@ -12,7 +13,7 @@ const query = (state = initialState, action) => {
     case actions.SET_ACTIVE_FILTER:
       return {
         ...state,
-        activeFilter: action.payload
+        filter: action.payload
       };
     case actions.SET_SORT_BY:
       return {
@@ -22,7 +23,17 @@ const query = (state = initialState, action) => {
     case actions.SET_SORT_ORDER:
       return {
         ...state,
-        sortOrder: action.payload === 'desc' ? 'asc' : 'desc'
+        sortOrder: action.payload
+      };
+    case actions.SET_LIMIT:
+      return {
+        ...state,
+        limit: action.payload
+      };
+    case actions.SET_SEARCH:
+      return {
+        ...state,
+        search: action.payload
       };
     default:
       return state;

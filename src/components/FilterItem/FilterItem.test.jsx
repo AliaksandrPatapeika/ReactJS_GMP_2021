@@ -6,7 +6,7 @@ import FilterItem from './FilterItem';
 describe('FilterItem', () => {
   test('renders correctly', () => {
     const filterItem = renderer
-      .create(<FilterItem name="ALL" isActive setActiveFilter={Function} />)
+      .create(<FilterItem label="ALL" isActive setFilter={Function} />)
       .toJSON();
 
     expect(filterItem).toMatchSnapshot();

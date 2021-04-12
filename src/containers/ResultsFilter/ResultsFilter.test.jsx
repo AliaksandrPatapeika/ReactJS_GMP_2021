@@ -5,12 +5,19 @@ import configureMockStore from 'redux-mock-store';
 
 import ResultsFilter from './ResultsFilter';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'}),
+  useHistory: () => ({
+    push: jest.fn()
+  })
+}));
+
 describe('ResultsFilter', () => {
   test('renders correctly', () => {
     const mockStore = configureMockStore();
     const initialState = {
       query: {
-        activeFilter: 'ALL'
+        filter: ''
       }
     };
     const store = mockStore(initialState);

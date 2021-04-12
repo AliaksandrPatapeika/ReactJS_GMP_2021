@@ -7,6 +7,10 @@ import configureMockStore from 'redux-mock-store';
 import MockMovies from '../../tests/mocks/mockData';
 import MovieDetailsContent from './MovieDetailsContent';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'})
+}));
+
 describe('MovieDetailsContent', () => {
   test('renders correctly', () => {
     const mockMovie = head(MockMovies);

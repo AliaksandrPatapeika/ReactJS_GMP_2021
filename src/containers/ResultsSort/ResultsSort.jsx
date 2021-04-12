@@ -1,30 +1,53 @@
 import './ResultsSort.less';
 
-import {filter, head} from 'lodash';
+import {assign, filter, head} from 'lodash';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory, useParams} from 'react-router-dom';
 
 import {setSortBy, setSortOrder} from '../../actions/movies';
 import Button from '../../components/Button';
 import Select from '../../components/Select';
 import SortIcon from '../../components/SortIcon';
 import {SortBy} from '../../constants';
+import {getQueryString} from '../../utils';
 
 const ResultsSort = () => {
   const sortBy = useSelector((state) => state.query.sortBy);
   const sortOrder = useSelector((state) => state.query.sortOrder);
+  const {id} = useParams();
+  const query = useSelector((state) => state.query);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const getSortValue = () => head(
     filter(SortBy, (option) => option.value === sortBy)
   );
 
   const setSortByHandler = (selectItem) => {
-    dispatch(setSortBy(selectItem.value));
+    /* for the sorting when the film details page is open */
+    if (id) {
+      dispatch(setSortBy(selectItem.value));
+    } else {
+      history.push({
+        pathname: '/search',
+        search: getQueryString(assign(query, {sortBy: selectItem.value}))
+      });
+    }
   };
 
+  const toggleSortOrder = () => (sortOrder === 'desc' ? 'asc' : 'desc');
+
   const setSortOrderHandler = () => {
-    dispatch(setSortOrder(sortOrder));
+    /* for the sorting order when the film details page is open */
+    if (id) {
+      dispatch(setSortOrder(toggleSortOrder()));
+    } else {
+      history.push({
+        pathname: '/search',
+        search: getQueryString(assign(query, {sortOrder: toggleSortOrder()}))
+      });
+    }
   };
 
   return (

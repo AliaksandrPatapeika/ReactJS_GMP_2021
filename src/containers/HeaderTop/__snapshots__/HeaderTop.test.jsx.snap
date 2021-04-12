@@ -19,14 +19,17 @@ exports[`HeaderTop renders correctly 1`] = `
     </span>
   </div>
   <button
-    className="addMovieButton"
+    className="returnToMainButton"
     disabled={false}
-    id={null}
+    id="returnToMainButton"
     onClick={[Function]}
     type="button"
   >
-    + ADD MOVIE
     
+    <i
+      aria-hidden="true"
+      className="fa fa-search fa-flip-horizontal"
+    />
   </button>
 </div>
 `;

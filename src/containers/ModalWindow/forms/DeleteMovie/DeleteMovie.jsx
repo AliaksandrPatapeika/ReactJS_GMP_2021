@@ -8,7 +8,8 @@ import Button from '../../../../components/Button';
 const DeleteMovie = ({formTitle, movieId}) => {
   const activeModalWindow = useSelector((state) => state.movie.activeModalWindow);
   const dispatch = useDispatch();
-  const onSubmit = () => {
+  const onSubmit = (event) => {
+    event.preventDefault();
     dispatch(deleteMovie(movieId));
   };
 
@@ -16,9 +17,7 @@ const DeleteMovie = ({formTitle, movieId}) => {
   <>
     <span className="title">{formTitle}</span>
     <form onSubmit={onSubmit}>
-      <div className="formInput">
-        <h1 className="content">Are you sure you want to delete this movie?</h1>
-      </div>
+      <h1 className="content">Are you sure you want to delete this movie?</h1>
       <div className="modalFooter">
         <Button
           type="submit"

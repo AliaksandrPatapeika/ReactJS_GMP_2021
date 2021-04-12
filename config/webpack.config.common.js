@@ -13,6 +13,7 @@ module.exports = {
     shared: 'lodash'
   },
   output: {
+    publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
@@ -21,6 +22,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
+    historyApiFallback: true,
     compress: true,
     open: true
   },

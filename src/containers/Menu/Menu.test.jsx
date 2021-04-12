@@ -5,12 +5,19 @@ import configureMockStore from 'redux-mock-store';
 
 import Menu from './Menu';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'}),
+  useHistory: () => ({
+    push: jest.fn()
+  })
+}));
+
 describe('Menu', () => {
   test('renders correctly', () => {
     const mockStore = configureMockStore();
     const initialState = {
       query: {
-        activeFilter: 'ALL',
+        filter: '',
         sortBy: 'release_date',
         sortOrder: 'desc'
       }

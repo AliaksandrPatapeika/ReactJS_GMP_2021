@@ -1,16 +1,25 @@
+import {head} from 'lodash';
 import React from 'react';
 import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 
+import MockMovies from '../../tests/mocks/mockData';
 import HeaderTop from './HeaderTop';
+
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn()
+  })
+}));
 
 describe('HeaderTop', () => {
   test('renders correctly', () => {
+    const mockMovie = head(MockMovies);
     const mockStore = configureMockStore();
     const initialState = {
       movie: {
-        activeMovieDetails: false
+        activeMovieDetailsMovie: mockMovie
       }
     };
     const store = mockStore(initialState);

@@ -8,21 +8,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/1"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}
@@ -61,21 +66,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/2"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}
@@ -114,21 +124,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/3"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}
@@ -167,21 +182,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/4"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}
@@ -220,21 +240,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/5"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}
@@ -273,21 +298,26 @@ exports[`MoviesList renders correctly 1`] = `
     className="movieCardContainer"
     onMouseLeave={[Function]}
   >
-    <button
-      className="posterButton"
-      disabled={false}
-      id={null}
+    <a
+      href="/film/6"
       onClick={[Function]}
-      type="button"
     >
-      
-      <img
-        alt="movie card poster"
-        className="movieCardPoster"
-        onError={[Function]}
-        src="test-file-stub"
-      />
-    </button>
+      <button
+        className="posterButton"
+        disabled={false}
+        id={null}
+        onClick={[Function]}
+        type="button"
+      >
+        
+        <img
+          alt="movie card poster"
+          className="movieCardPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+      </button>
+    </a>
     <button
       className="threeDotsIcon"
       disabled={false}

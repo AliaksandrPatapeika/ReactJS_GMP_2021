@@ -1,9 +1,9 @@
 export const FilterItems = [
-  {id: 1, name: 'ALL'},
-  {id: 2, name: 'DOCUMENTARY'},
-  {id: 3, name: 'COMEDY'},
-  {id: 4, name: 'HORROR'},
-  {id: 5, name: 'CRIME'}
+  {id: 1, value: '', label: 'ALL'},
+  {id: 2, value: 'documentary', label: 'DOCUMENTARY'},
+  {id: 3, value: 'comedy', label: 'COMEDY'},
+  {id: 4, value: 'horror', label: 'HORROR'},
+  {id: 5, value: 'crime', label: 'CRIME'}
 ];
 
 export const Genres = [

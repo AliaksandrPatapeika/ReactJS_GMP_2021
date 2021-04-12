@@ -4,6 +4,8 @@ exports[`SearchInput renders correctly 1`] = `
 <input
   autoComplete="off"
   className="searchInput"
+  onChange={[Function]}
   placeholder="What do you want to watch?"
+  value="value"
 />
 `;

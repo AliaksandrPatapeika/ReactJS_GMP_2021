@@ -5,12 +5,19 @@ import configureMockStore from 'redux-mock-store';
 
 import ResultsSort from './ResultsSort';
 
+jest.mock('react-router-dom', () => ({
+  useParams: jest.fn().mockReturnValue({id: '123'}),
+  useHistory: () => ({
+    push: jest.fn()
+  })
+}));
+
 describe('ResultsSort', () => {
   test('renders correctly', () => {
     const mockStore = configureMockStore();
     const initialState = {
       query: {
-        activeFilter: 'ALL',
+        filter: '',
         sortBy: 'release_date',
         sortOrder: 'desc'
       }

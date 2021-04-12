@@ -1,19 +1,33 @@
 import './ResultsFilter.less';
 
+import {assign} from 'lodash';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory, useParams} from 'react-router-dom';
 
-import {setActiveFilter} from '../../actions/movies';
+import {setFilter} from '../../actions/movies';
 import FilterItem from '../../components/FilterItem';
 import {FilterItems} from '../../constants';
+import {getQueryString} from '../../utils';
 
 const ResultsFilter = () => {
   const genres = {filterItems: FilterItems};
-  const activeFilter = useSelector((state) => state.query.activeFilter);
+  const {id} = useParams();
+  const filter = useSelector((state) => state.query.filter);
+  const query = useSelector((state) => state.query);
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const setActiveFilterHandler = (id, genre) => {
-    dispatch(setActiveFilter(genre));
+  const setFilterHandler = (genre) => {
+    /* for the filtering when the film details page is open */
+    if (id) {
+      dispatch(setFilter(genre));
+    } else {
+      history.push({
+        pathname: '/search',
+        search: getQueryString(assign(query, {filter: genre}))
+      });
+    }
   };
 
   return (
@@ -21,10 +35,10 @@ const ResultsFilter = () => {
       <ul className="resultsFilterContainer">
         {genres.filterItems.map((item) => (
           <FilterItem
-            name={item.name}
+            label={item.label}
             key={item.id}
-            isActive={item.name === activeFilter}
-            setActiveFilter={() => setActiveFilterHandler(item.id, item.name)}
+            isActive={item.value === filter}
+            setFilter={() => setFilterHandler(item.value)}
           />
         ))}
       </ul>

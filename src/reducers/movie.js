@@ -3,7 +3,6 @@ import * as actions from '../actions/actionTypes';
 const initialState = {
   activeModalMovie: null,
   activeModalWindow: false,
-  activeMovieDetails: false,
   activeMovieDetailsMovie: null,
   errorMessage: '',
   isLoading: false,
@@ -27,7 +26,6 @@ const movie = (state = initialState, action) => {
     case actions.CLOSE_MOVIE_DETAILS:
       return {
         ...state,
-        activeMovieDetails: false,
         activeMovieDetailsMovie: null
       };
     case actions.FETCH_MOVIES_SUCCESS:
@@ -36,6 +34,11 @@ const movie = (state = initialState, action) => {
         isLoading: false,
         movies: action.payload.data,
         totalAmount: action.payload.totalAmount
+      };
+    case actions.GET_MOVIE_BY_ID_SUCCESS:
+      return {
+        ...state,
+        activeMovieDetailsMovie: action.payload
       };
     case actions.SHOW_MODAL:
       return {
@@ -46,7 +49,6 @@ const movie = (state = initialState, action) => {
     case actions.SHOW_MOVIE_DETAILS:
       return {
         ...state,
-        activeMovieDetails: true,
         activeMovieDetailsMovie: action.payload
       };
     case actions.START_ASYNC_REQUEST:

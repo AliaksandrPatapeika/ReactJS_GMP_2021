@@ -6,7 +6,7 @@ import SearchInput from './SearchInput';
 describe('SearchInput', () => {
   test('renders correctly', () => {
     const searchInput = renderer
-      .create(<SearchInput />)
+      .create(<SearchInput value="value" onChange={Function} />)
       .toJSON();
 
     expect(searchInput).toMatchSnapshot();

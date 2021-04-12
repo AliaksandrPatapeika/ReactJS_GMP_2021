@@ -1,8 +1,9 @@
 import './MovieCard.less';
 
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {showModal, showMovieDetails} from '../../actions/movies';
 import Button from '../../components/Button';
@@ -17,15 +18,15 @@ import MovieCardMenu from '../MovieCardMenu';
 const MovieCard = ({
   movie,
   movie: {
-    poster_path, title, release_date, genres
+    id, poster_path, title, release_date, genres
   }
 }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const dispatch = useDispatch();
 
-  const showMovieDetailsWindow = () => {
+  const showMovieDetailsWindow = useCallback(() => {
     dispatch(showMovieDetails(movie));
-  };
+  }, [dispatch, movie]);
 
   const showMovieCardSubMenu = () => {
     setShowSubMenu(true);
@@ -48,14 +49,16 @@ const MovieCard = ({
       className="movieCardContainer"
       onMouseLeave={closeMovieCardSubMenu}
     >
-      <Button className="posterButton" onClick={showMovieDetailsWindow}>
-        <img
-          src={poster_path || noImage}
-          onError={addDefaultSrc}
-          alt="movie card poster"
-          className="movieCardPoster"
-        />
-      </Button>
+      <Link to={`/film/${id}`}>
+        <Button className="posterButton" onClick={showMovieDetailsWindow}>
+          <img
+            src={poster_path || noImage}
+            onError={addDefaultSrc}
+            alt="movie card poster"
+            className="movieCardPoster"
+          />
+        </Button>
+      </Link>
       <Button className="threeDotsIcon" onClick={showMovieCardSubMenu}>
         <img src={threeDotsIconLink} alt="movie card menu" />
       </Button>

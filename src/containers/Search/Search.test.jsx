@@ -1,12 +1,34 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
+import configureMockStore from 'redux-mock-store';
 
 import Search from './Search';
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: () => ({
+    pathname: 'localhost:3000/example/path'
+  })
+}));
+
 describe('Search', () => {
   test('renders correctly', () => {
+    const mockStore = configureMockStore();
+    const initialState = {
+      query: {
+        filter: '',
+        sortBy: 'release_date',
+        sortOrder: 'desc'
+      }
+    };
+    const store = mockStore(initialState);
     const search = renderer
-      .create(<Search />)
+      .create(
+        <Provider store={store}>
+          <Search />
+        </Provider>
+      )
       .toJSON();
 
     expect(search).toMatchSnapshot();

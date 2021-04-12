@@ -3,7 +3,7 @@ import 'regenerator-runtime/runtime';
 import axios from 'axios';
 
 import {BASE_URL} from '../constants/constants';
-import {getQueryString, scrollToTop, sleep} from '../utils';
+import {getQueryString} from '../utils';
 import * as actions from './actionTypes';
 
 export const catchError = (error) => ({
@@ -24,7 +24,12 @@ export const fetchMoviesSuccess = (movies) => ({
   payload: movies
 });
 
-export const setActiveFilter = (genre) => ({
+export const getMovieByIdSuccess = (movie) => ({
+  type: actions.GET_MOVIE_BY_ID_SUCCESS,
+  payload: movie
+});
+
+export const setFilter = (genre) => ({
   type: actions.SET_ACTIVE_FILTER,
   payload: genre
 });
@@ -36,6 +41,16 @@ export const setSortBy = (value) => ({
 
 export const setSortOrder = (value) => ({
   type: actions.SET_SORT_ORDER,
+  payload: value
+});
+
+export const setLimit = (value) => ({
+  type: actions.SET_LIMIT,
+  payload: value
+});
+
+export const setSearch = (value) => ({
+  type: actions.SET_SEARCH,
   payload: value
 });
 
@@ -55,37 +70,43 @@ export const startAsyncRequest = () => ({
 
 export const fetchMovies = () => (dispatch, getState) => {
   dispatch(startAsyncRequest());
-  sleep(700)
-    .then(() => axios
-      .get(getQueryString(getState().query))
-      .then((res) => {
-        dispatch(fetchMoviesSuccess(res.data));
-      })
-      .catch((error) => {
-        dispatch(catchError(error.message));
-      }));
-};
-
-export const addMovie = (payload) => (dispatch, getState) => {
   axios
-    .post(BASE_URL, payload)
-    .then(() => {
-      dispatch(closeModal());
-      dispatch(fetchMovies(getState().query));
-      scrollToTop();
+    .get(`${BASE_URL}${getQueryString(getState().query)}`)
+    .then((res) => {
+      dispatch(fetchMoviesSuccess(res.data));
     })
     .catch((error) => {
       dispatch(catchError(error.message));
     });
 };
 
-export const editMovie = (payload) => (dispatch, getState) => {
+export const getMovieById = (movieId) => (dispatch) => {
+  axios
+    .get(`${BASE_URL}/${movieId}`)
+    .then((res) => {
+      dispatch(getMovieByIdSuccess(res.data));
+    })
+    .catch((error) => {
+      dispatch(catchError(error.message));
+    });
+};
+
+export const addMovie = (payload) => (dispatch) => {
+  axios
+    .post(BASE_URL, payload)
+    .then(() => {
+      dispatch(closeModal());
+    })
+    .catch((error) => {
+      dispatch(catchError(error.message));
+    });
+};
+
+export const editMovie = (payload) => (dispatch) => {
   axios
     .put(BASE_URL, payload)
     .then(() => {
       dispatch(closeModal());
-      dispatch(fetchMovies(getState().query));
-      scrollToTop();
     })
     .catch((error) => {
       dispatch(catchError(error.message));
@@ -95,7 +116,32 @@ export const editMovie = (payload) => (dispatch, getState) => {
 export const deleteMovie = (movieId) => (dispatch) => {
   axios
     .delete(`${BASE_URL}/${movieId}`)
+    .then(() => {
+      dispatch(closeModal());
+    })
     .catch((error) => {
       dispatch(catchError(error.message));
     });
+};
+
+export const setStateFromURL = (url) => (dispatch) => {
+  if (url.get('search')) {
+    dispatch(setSearch(url.get('search')));
+  }
+
+  if (url.get('filter')) {
+    dispatch(setFilter(url.get('filter')));
+  }
+
+  if (url.get('sortBy')) {
+    dispatch(setSortBy(url.get('sortBy')));
+  }
+
+  if (url.get('sortOrder')) {
+    dispatch(setSortOrder(url.get('sortOrder')));
+  }
+
+  if (url.get('limit')) {
+    dispatch(setLimit(url.get('limit')));
+  }
 };
