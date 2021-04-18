@@ -70,7 +70,7 @@ export const startAsyncRequest = () => ({
 
 export const fetchMovies = () => (dispatch, getState) => {
   dispatch(startAsyncRequest());
-  axios
+  return axios
     .get(`${BASE_URL}${getQueryString(getState().query)}`)
     .then((res) => {
       dispatch(fetchMoviesSuccess(res.data));
@@ -80,49 +80,41 @@ export const fetchMovies = () => (dispatch, getState) => {
     });
 };
 
-export const getMovieById = (movieId) => (dispatch) => {
-  axios
-    .get(`${BASE_URL}/${movieId}`)
-    .then((res) => {
-      dispatch(getMovieByIdSuccess(res.data));
-    })
-    .catch((error) => {
-      dispatch(catchError(error.message));
-    });
-};
+export const getMovieById = (movieId) => (dispatch) => axios
+  .get(`${BASE_URL}/${movieId}`)
+  .then((res) => {
+    dispatch(getMovieByIdSuccess(res.data));
+  })
+  .catch((error) => {
+    dispatch(catchError(error.message));
+  });
 
-export const addMovie = (payload) => (dispatch) => {
-  axios
-    .post(BASE_URL, payload)
-    .then(() => {
-      dispatch(closeModal());
-    })
-    .catch((error) => {
-      dispatch(catchError(error.message));
-    });
-};
+export const addMovie = (payload) => (dispatch) => axios
+  .post(BASE_URL, payload)
+  .then(() => {
+    dispatch(closeModal());
+  })
+  .catch((error) => {
+    dispatch(catchError(error.message));
+  });
 
-export const editMovie = (payload) => (dispatch) => {
-  axios
-    .put(BASE_URL, payload)
-    .then(() => {
-      dispatch(closeModal());
-    })
-    .catch((error) => {
-      dispatch(catchError(error.message));
-    });
-};
+export const editMovie = (payload) => (dispatch) => axios
+  .put(BASE_URL, payload)
+  .then(() => {
+    dispatch(closeModal());
+  })
+  .catch((error) => {
+    dispatch(catchError(error.message));
+  });
 
-export const deleteMovie = (movieId) => (dispatch) => {
-  axios
-    .delete(`${BASE_URL}/${movieId}`)
-    .then(() => {
-      dispatch(closeModal());
-    })
-    .catch((error) => {
-      dispatch(catchError(error.message));
-    });
-};
+export const deleteMovie = (movieId) => (dispatch) => axios
+  .delete(`${BASE_URL}/${movieId}`)
+  .then(() => {
+    dispatch(closeModal());
+  })
+  .catch((error) => {
+    dispatch(catchError(error.message));
+  });
 
 export const setStateFromURL = (url) => (dispatch) => {
   if (url.get('search')) {
