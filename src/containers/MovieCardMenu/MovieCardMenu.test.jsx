@@ -1,3 +1,4 @@
+import {noop} from 'lodash';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -8,9 +9,9 @@ describe('MovieCardMenu', () => {
     const movieCardMenu = renderer
       .create(<MovieCardMenu
         showSubMenu
-        closeSubMenu={Function}
-        showEditMovieWindow={Function}
-        showDeleteMovieWindow={Function}
+        closeSubMenu={noop}
+        showEditMovieWindow={noop}
+        showDeleteMovieWindow={noop}
       />)
       .toJSON();
 

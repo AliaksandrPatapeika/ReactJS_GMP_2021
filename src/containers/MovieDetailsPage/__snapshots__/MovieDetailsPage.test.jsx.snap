@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetailsPage renders correctly 1`] = `
+Array [
+  <div
+    className="loadingSpinner"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
+  <circle cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(45 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.125s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(90 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.25s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(135 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.375s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(180 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.5s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(225 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.625s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(270 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.75s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(315 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.875s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+  <circle transform=\\"rotate(180 16 16)\\" cx=\\"16\\" cy=\\"3\\" r=\\"0\\">
+    <animate attributeName=\\"r\\" values=\\"0;3;0;0\\" dur=\\"1s\\" repeatCount=\\"indefinite\\" begin=\\"0.5s\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8\\" calcMode=\\"spline\\" />
+  </circle>
+</svg>
+",
+      }
+    }
+    style={
+      Object {
+        "fill": "#f65261",
+        "height": 64,
+        "width": 64,
+      }
+    }
+  />,
+  <div
+    className="headerContainer movieDetailsContainer"
+  >
+    <div
+      className="blur"
+    >
+      <div
+        className="headerTopContainer"
+      >
+        <div
+          className="logoContainer"
+        >
+          <span
+            className="netflix"
+          >
+            netflix
+          </span>
+          <span
+            className="roulette"
+          >
+            roulette
+          </span>
+        </div>
+        <button
+          className="returnToMainButton"
+          disabled={false}
+          id="returnToMainButton"
+          onClick={[Function]}
+          type="button"
+        >
+          
+          <i
+            aria-hidden="true"
+            className="fa fa-search fa-flip-horizontal"
+          />
+        </button>
+      </div>
+      <div
+        className="movieDetailsContentContainer"
+      >
+        <img
+          alt="movie details poster"
+          className="movieDetailsPoster"
+          onError={[Function]}
+          src="test-file-stub"
+        />
+        <div
+          className="movieDetailsContent"
+        >
+          <div
+            className="movieDetailsTitleRating"
+          >
+            <span
+              className="movieDetailsTitle"
+            >
+              Pulp Fiction
+            </span>
+            <div
+              className="movieDetailsRating"
+              title="Vote count: 1195"
+            >
+              4.3
+            </div>
+          </div>
+          <div>
+            Mock tagline!
+          </div>
+          <div
+            className="movieDetailsReleaseDateRuntime"
+          >
+            <div
+              title="Release date: 2004-03-15"
+            >
+              2004
+            </div>
+            <div>
+              154
+               
+              min
+            </div>
+          </div>
+          <div
+            className="movieDetailsLabel"
+          >
+            Genres
+            : 
+            <span
+              className="movieDetailsValue"
+            >
+              Action & Adventure
+            </span>
+          </div>
+          <div
+            className="movieDetailsLabel"
+          >
+            Budget
+            : 
+            <span
+              className="movieDetailsValue"
+            >
+              55 000 000 $
+            </span>
+          </div>
+          <div
+            className="movieDetailsLabel"
+          >
+            Revenue
+            : 
+            <span
+              className="movieDetailsValue"
+            >
+              136 906 000 $
+            </span>
+          </div>
+          <div
+            className="overview"
+          >
+            Pulp Fiction is a 1994 American neo-noir black comedy crime film written and directed by Quentin Tarantino, who conceived it with Roger Avary.[4] Starring John Travolta, Samuel L. Jackson, Bruce Willis, Tim Roth, Ving Rhames, and Uma Thurman, it tells several stories of criminal Los Angeles. The title refers to the pulp magazines and hardboiled crime novels popular during the mid-20th century, known for their graphic violence and punchy dialogue.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="footerContainer"
+  >
+    <div
+      className="logoContainer"
+    >
+      <span
+        className="netflix"
+      >
+        netflix
+      </span>
+      <span
+        className="roulette"
+      >
+        roulette
+      </span>
+    </div>
+  </footer>,
+]
+`;

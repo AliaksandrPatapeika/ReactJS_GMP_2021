@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNotFound renders correctly 1`] = `
+Array [
+  <div
+    className="pageNotFoundContainer"
+  >
+    <div
+      className="headerTopContainer"
+    >
+      <div
+        className="logoContainer"
+      >
+        <span
+          className="netflix"
+        >
+          netflix
+        </span>
+        <span
+          className="roulette"
+        >
+          roulette
+        </span>
+      </div>
+    </div>
+    <div
+      className="pageNotFoundContent"
+    >
+      <h1
+        className="title"
+      >
+        Page Not Found
+      </h1>
+      <img
+        alt="page not found"
+        className="errorPageImage"
+        src="test-file-stub"
+      />
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <button
+          className="goBackButton"
+          disabled={false}
+          id={null}
+          onClick={[Function]}
+          type="button"
+        >
+          GO BACK TO HOME
+          
+        </button>
+      </a>
+    </div>
+  </div>,
+  <footer
+    className="footerContainer"
+  >
+    <div
+      className="logoContainer"
+    >
+      <span
+        className="netflix"
+      >
+        netflix
+      </span>
+      <span
+        className="roulette"
+      >
+        roulette
+      </span>
+    </div>
+  </footer>,
+]
+`;
